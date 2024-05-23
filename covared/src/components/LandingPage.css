@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+@media (max-width: 768px) {
+  .features-section {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .features-section {
+    grid-template-columns: 1fr; /* 1 column for very small screens */
+  }
+}
+
+body, html, #root {
+  font-family: 'Figtree', 'Roboto', sans-serif, 'Helvetica Neue';
+  font-size: 1.1rem;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-section {
+  margin-top: 5rem;
+}
+
+.hero-section h1 {
+  font-size: 6rem; 
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.features-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 2rem; 
+  margin-top: 4rem;
+}
+
+.card-body {
+  min-height: 8rem;
+  background-color: #d0e0f0; 
+  border-color: #d0e0f0;
+  color: #333; 
+}
+
+.card.live .card-body {
+  cursor: pointer;
+}
+
+.card.live .card-body:hover {
+  background-color: #b0c0d0; 
+  border-color: #b0c0d0;
+}
+
+.card.coming-soon {
+  opacity: 0.5;
+  cursor: not-allowed !important;
+}
+
+.btn-custom-standard {
+  background-color: #d0e0f0 !important; 
+  border-color: #d0e0f0 !important;
+  color: #333 !important; 
+}
+
+.btn-custom-standard:hover {
+  background-color: #b0c0d0 !important; 
+  border-color: #b0c0d0 !important;
+}
+
+.btn-custom-green {
+  background-color: #d0eadf !important; /* Pale green */
+  border-color: #a9d5c3 !important;
+  color: #333 !important;
+}
+
+.btn-custom-green:hover {
+  background-color: #a9d5c3 !important; /* Darker green */
+  border-color: #98c2b0 !important;
+}
+
+.btn-custom-red {
+  background-color: #f0d0d0 !important; /* Pale red */
+  border-color: #d0b0b0 !important;
+  color: #333 !important;
+}
+
+.btn-custom-red:hover {
+  background-color: #d0b0b0 !important; /* Darker red */
+  border-color: #c0a0a0 !important;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+
+.shake {
+animation: shake 0.3s ease-in-out;
+}

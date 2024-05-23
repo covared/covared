@@ -1,0 +1,25 @@
+.space-right {
+  margin-right: 1rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar a, .navbar a:visited {
+  text-decoration: none; /* Removes underlining */
+  color: inherit; /* Keeps the text color consistent */
+}
+
+
+.navbar-left {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+}

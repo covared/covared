@@ -1,0 +1,86 @@
+.pricing-page {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.pricing-card {
+  border-radius: 0.5rem;
+	height: 65vh !important;
+}
+
+.pricing-page h1 {
+  font-size: 4rem; 
+	margin-bottom: 1rem;
+}
+
+.card-body {
+  padding: 1rem; 
+	display: flex;
+  flex-direction: column;
+  height: 100%; 
+}
+
+.card-top {
+	height: 13vh;
+}
+
+.card-title {
+  font-size: 1.5rem; /* Making the title larger */
+  font-weight: bold; /* Making the title bold */
+  margin-bottom: 0.5rem; /* Adjust spacing below the title */
+}
+
+.card-text {
+  font-size: 0.9rem; /* Making description text smaller */
+}
+
+.price {
+  font-size: 2rem; /* Making the price larger */
+  font-weight: bold; /* Making the price bold */
+  margin: 1rem 0; /* Adjusting margin around the price */
+}
+
+.frequency {
+  font-size: 0.8rem; /* Making the frequency smaller */
+}
+
+.price, .frequency {
+  margin-top: auto; /* Pushes the price and frequency to the bottom */
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  text-align: left; /* Ensure features are aligned left */
+  margin: 0 auto; /* Center the list in the card */
+  max-width: 90%; /* Adjust according to your design preference */
+	flex-grow: 1;
+}
+
+.tick {
+	color: rgb(40, 126, 40)
+}
+
+.cross {
+	color: rgb(255, 90, 90)
+}
+
+.icon-large {
+  font-size: 1.2rem; /* Adjust this value as needed */
+}
+
+.features-list li {
+  margin-bottom: 0.3rem; /* Adjust spacing between features */
+	font-size: 0.8rem;
+}
+
+.checkout-button {
+  margin-top: 1rem;
+  width: 100%; /* Make the button extend to the full width of the card */
+  border: none; /* Optional: remove border from the button */
+  background-color: #0056b3; /* Darker shade of blue for the button */
+  color: white;
+  padding: 0.5rem 0; /* Adjust button padding */
+  font-weight: bold;
+  border-radius: 0.3rem; /* Rounded corners for the button */
+}
