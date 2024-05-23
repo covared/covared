@@ -1,0 +1,3 @@
+web: uvicorn main:app --host 0.0.0.0 --port ${PORT:-5000}
+
+postgresql://dyoqohhmowammd:497d54c8372aaca40919c4e4ea02f529b715c4383cb54480c434588489aa8a80@ec2-34-242-120-113.eu-west-1.compute.amazonaws.com:5432/ddr7i60vucj4vl
