@@ -29,6 +29,7 @@ export const AIWriterAPI = {
   },
   postEmail: async function (email: string) {
     let endpointURL = backendURL + "/send-email";
+    await fetch(backendURL + "/status")
 
     let response = await fetch(endpointURL, {
       method: "POST",
