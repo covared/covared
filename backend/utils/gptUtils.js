@@ -26,22 +26,26 @@ function getReportWriterPrompt(student_name, class_name, topics, competencies) {
 }
 
 async function sendPromptToGpt(prompt, use_gpt4 = false) {
-  try {
-    const model = use_gpt4 ? "gpt-4-0125-preview" : "gpt-3.5-turbo-0125";
-    const response = await openai.chat.completions.create({
-      model: model,
-      prompt: prompt,
-      max_tokens: 150,
-      n: 1,
-      stop: null,
-      temperature: 0.7,
-    });
+  const model = use_gpt4 ? "gpt-4-0125-preview" : "gpt-3.5-turbo-0125";
 
-    return response.choices[0].text.trim();
-  } catch (error) {
-    console.error(error);
-    return "Error generating report";
-  }
+  const response = await openai.chat.completions.create({
+    model,
+    messages: [
+      {
+        role: "system",
+        content:
+          "You are a helpful assistant designed to output a string with a maximum of 150 words",
+      },
+      { role: "user", content: prompt },
+    ],
+    max_tokens: 150,
+    n: 1,
+    stop: null,
+    temperature: 0.7,
+  });
+
+  const content = JSON.parse(response.choices[0].message.content);
+  return content.report.trim();
 }
 
 module.exports = {
