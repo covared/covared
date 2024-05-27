@@ -49,7 +49,7 @@ const Return: React.FC = () => {
 								We appreciate your business! A confirmation email will be sent to {customerEmail}.
 							</p>
 							<p>
-								If you have any questions, please email <a href="mailto:info@breezed.co.uk">info@breezed.co.uk</a>.
+								If you have any questions, please email <a href="mailto:info@covared.com">info@covared.com</a>.
 							</p>
 							<button className="btn btn-custom-standard mt-1" onClick={loginNavigate}>Get Started</button>
 						</div>

@@ -400,7 +400,7 @@ def set_access_cookies(response: Response, email: str, is_subscribed_monthly: bo
 
 def send_email(email_address: str, subject: str, html_content: str):
     message = Mail(
-        from_email='info@breezed.co.uk',
+        from_email='info@covared.com',
         to_emails=email_address,
         subject=subject,
         html_content=html_content

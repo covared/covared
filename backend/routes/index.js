@@ -61,7 +61,7 @@ router.post("/send-email", async (req, res) => {
   });
 
   const mailOptions = {
-    from: "info@breezed.co.uk",
+    from: "info@covared.com",
     to: email,
     subject: "BreezEd Verification Email",
     html: `<html><body><p>Thank you for logging in. Your verification code is ${verificationCode}</p></body></html>`,
