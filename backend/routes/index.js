@@ -142,11 +142,13 @@ router.post("/report-writer", async (req, res) => {
     topics,
     competencies
   );
-  const answer = await sendPromptToGpt(system_prompt, use_gpt4);
-  console.log(`raw answer=${answer}`);
-  const answerJson = JSON.parse(answer);
-
-  res.json(answerJson);
+  try {
+    const answer = await sendPromptToGpt(system_prompt, use_gpt4);
+    res.json({ report: answer });
+  } catch (error) {
+    console.error("error generating report", error);
+    res.json({ report: "Error generating report" });
+  }
 });
 
 module.exports = router;
