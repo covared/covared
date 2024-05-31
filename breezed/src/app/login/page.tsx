@@ -1,4 +1,5 @@
 "use client";
+import Alert from "react-bootstrap/Alert";
 import { useRouter } from "next/navigation";
 import React, { useState, useEffect } from "react";
 
@@ -18,6 +19,7 @@ const LoginPage: React.FC = () => {
   const { isLoggedIn } = useAuth();
   const [email, setEmail] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string|undefined>();
 
   useEffect(() => {
     if (isLoggedIn) {
@@ -34,9 +36,15 @@ const LoginPage: React.FC = () => {
   ) => {
     event.preventDefault();
     setIsLoading(true);
-    await AIWriterAPI.postEmail(email);
-    localStorage.setItem("email", email);
-    router.push("/check-email-code");
+    setError(undefined);
+    const res = await AIWriterAPI.postEmail(email);
+
+    if (res.success === true) {
+      localStorage.setItem("email", email);
+      router.push("/check-email-code");
+    } else {
+      setError(res.message)
+    }
     setIsLoading(false);
   };
 
@@ -45,6 +53,11 @@ const LoginPage: React.FC = () => {
       <div className="row justify-content-center">
         <div className="col-10">
           <NavBar />
+          {error && (
+            <Alert variant="danger">
+              {error}
+            </Alert>
+          )}
           <div className="page-container">
             <img
               src={images.logo.image}
