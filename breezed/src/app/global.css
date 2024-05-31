@@ -1,0 +1,388 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+@media (max-width: 768px) {
+  .features-section {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .features-section {
+    grid-template-columns: 1fr; /* 1 column for very small screens */
+  }
+}
+
+body,
+html,
+#root {
+  font-family: "Figtree", "Roboto", sans-serif, "Helvetica Neue";
+  font-size: 1.1rem;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-section {
+  margin-top: 5rem;
+}
+
+.hero-section h1 {
+  font-size: 6rem;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.features-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.card-body {
+  min-height: 8rem;
+  background-color: #d0e0f0;
+  border-color: #d0e0f0;
+  color: #333;
+}
+
+.card.live .card-body {
+  cursor: pointer;
+}
+
+.card.live .card-body:hover {
+  background-color: #b0c0d0;
+  border-color: #b0c0d0;
+}
+
+.card.coming-soon {
+  opacity: 0.5;
+  cursor: not-allowed !important;
+}
+
+.btn-custom-standard {
+  background-color: #d0e0f0 !important;
+  border-color: #d0e0f0 !important;
+  color: #333 !important;
+}
+
+.btn-custom-standard:hover {
+  background-color: #b0c0d0 !important;
+  border-color: #b0c0d0 !important;
+}
+
+.btn-custom-green {
+  background-color: #d0eadf !important; /* Pale green */
+  border-color: #a9d5c3 !important;
+  color: #333 !important;
+}
+
+.btn-custom-green:hover {
+  background-color: #a9d5c3 !important; /* Darker green */
+  border-color: #98c2b0 !important;
+}
+
+.btn-custom-red {
+  background-color: #f0d0d0 !important; /* Pale red */
+  border-color: #d0b0b0 !important;
+  color: #333 !important;
+}
+
+.btn-custom-red:hover {
+  background-color: #d0b0b0 !important; /* Darker red */
+  border-color: #c0a0a0 !important;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.shake {
+  animation: shake 0.3s ease-in-out;
+}
+
+.error-message {
+  align-self: center;
+  color: red;
+  margin-top: 10px;
+}
+
+.login-box {
+  max-width: 40%;
+  margin: 0 auto;
+}
+
+.login-box input,
+.login-box button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+hr {
+  margin: 20px 0;
+}
+
+.space-right {
+  margin-right: 1rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar a,
+.navbar a:visited {
+  text-decoration: none; /* Removes underlining */
+  color: inherit; /* Keeps the text color consistent */
+}
+
+.navbar-left {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.pricing-page {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.pricing-card {
+  border-radius: 0.5rem;
+  height: 65vh !important;
+}
+
+.pricing-page h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.card-body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-top {
+  height: 13vh;
+}
+
+.card-title {
+  font-size: 1.5rem; /* Making the title larger */
+  font-weight: bold; /* Making the title bold */
+  margin-bottom: 0.5rem; /* Adjust spacing below the title */
+}
+
+.card-text {
+  font-size: 0.9rem; /* Making description text smaller */
+}
+
+.price {
+  font-size: 2rem; /* Making the price larger */
+  font-weight: bold; /* Making the price bold */
+  margin: 1rem 0; /* Adjusting margin around the price */
+}
+
+.frequency {
+  font-size: 0.8rem; /* Making the frequency smaller */
+}
+
+.price,
+.frequency {
+  margin-top: auto; /* Pushes the price and frequency to the bottom */
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  text-align: left; /* Ensure features are aligned left */
+  margin: 0 auto; /* Center the list in the card */
+  max-width: 90%; /* Adjust according to your design preference */
+  flex-grow: 1;
+}
+
+.tick {
+  color: rgb(40, 126, 40);
+}
+
+.cross {
+  color: rgb(255, 90, 90);
+}
+
+.icon-large {
+  font-size: 1.2rem; /* Adjust this value as needed */
+}
+
+.features-list li {
+  margin-bottom: 0.3rem; /* Adjust spacing between features */
+  font-size: 0.8rem;
+}
+
+.checkout-button {
+  margin-top: 1rem;
+  width: 100%; /* Make the button extend to the full width of the card */
+  border: none; /* Optional: remove border from the button */
+  background-color: #0056b3; /* Darker shade of blue for the button */
+  color: white;
+  padding: 0.5rem 0; /* Adjust button padding */
+  font-weight: bold;
+  border-radius: 0.3rem; /* Rounded corners for the button */
+}
+
+.app-content {
+  background-color: #333;
+  color: #fff;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.app-header {
+  text-align: center;
+  font-size: 3em;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.app-body {
+  display: flex;
+  flex-direction: row;
+  height: 80vh;
+}
+
+.column {
+  flex: 1;
+}
+
+.report-container {
+  border: 1px solid black;
+  height: 90%;
+  padding: 10px;
+  background-color: #f5f5f5;
+  color: black;
+  overflow-y: auto;
+}
+
+.input-row {
+  margin-bottom: 0.5rem; /* Space between rows */
+}
+
+.input-field {
+  margin-right: 3rem; /* Space between inputs */
+}
+
+.performance-button {
+  height: 4.5rem;
+  width: 23%;
+  margin-right: 2%;
+  margin-bottom: 0.5rem;
+}
+
+.comp-topic-area-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+
+.comp-topic-input {
+  width: 70% !important;
+  flex-grow: 1;
+  margin-right: 1rem;
+  display: inline-block;
+}
+
+.fix-width-btn {
+  width: 30%;
+}
+
+.trash-button {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.bi-trash {
+  font-size: 2rem;
+  color: rgb(255, 135, 155);
+}
+
+/* Overlay to freeze the screen and make it slightly lighter */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7); /* Light shade */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+/* Spinning dots loading animation */
+.spinner {
+  border: 1rem solid rgba(0, 0, 0, 0.1);
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  border-left-color: #09f;
+  margin-bottom: 2rem;
+  animation: spin 1s ease infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+button,
+.bi-trash {
+  cursor: pointer;
+}
+
+.return-page h1 {
+  font-size: 4rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.return-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}

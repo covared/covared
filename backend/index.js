@@ -5,8 +5,7 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const routes = require("./routes");
 const db = require("./models");
-const stripe = require("stripe")(process.env.STRIPE_SECRET_API_KEY_LIVE);
-const { setAccessCookies } = require("./utils/cookies");
+const { job } = require("./cron");
 
 const app = express();
 app.use(bodyParser.json());
@@ -32,6 +31,7 @@ app.use("/", routes);
 
 db.sequelize.sync().then(() => {
   app.listen(process.env.PORT || 3000, () => {
+    job.start();
     console.log(`Server is running on port ${process.env.PORT || 3000}`);
   });
 });
