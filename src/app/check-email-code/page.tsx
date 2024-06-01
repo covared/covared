@@ -29,8 +29,8 @@ const CheckEmailCode: React.FC = () => {
   }, []);
 
   const getEmail = () => {
-   return localStorage.getItem("email") || ""
-  }
+    return localStorage.getItem("email") || "";
+  };
 
   const handleCodeChange = (event: any) => {
     const value = event.target.value.slice(0, 6).replace(/[^0-9]/gi, "");
@@ -69,7 +69,12 @@ const CheckEmailCode: React.FC = () => {
             <img
               src={images.logo.image}
               alt={images.logo.name}
-              style={{ height: "10rem", width: "auto", marginTop: "5rem" }}
+              style={{
+                maxWidth: "2rem",
+                height: "auto",
+                marginLeft: "10px",
+                marginRight: "10px",
+              }}
             />
             <h1>Covared.com</h1>
             <h5>You have been sent a 6 digit code</h5>

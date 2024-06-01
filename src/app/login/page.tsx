@@ -19,7 +19,7 @@ const LoginPage: React.FC = () => {
   const { isLoggedIn } = useAuth();
   const [email, setEmail] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<string|undefined>();
+  const [error, setError] = useState<string | undefined>();
 
   useEffect(() => {
     if (isLoggedIn) {
@@ -43,7 +43,7 @@ const LoginPage: React.FC = () => {
       localStorage.setItem("email", email);
       router.push("/check-email-code");
     } else {
-      setError(res.message)
+      setError(res.message);
     }
     setIsLoading(false);
   };
@@ -53,16 +53,17 @@ const LoginPage: React.FC = () => {
       <div className="row justify-content-center">
         <div className="col-10">
           <NavBar />
-          {error && (
-            <Alert variant="danger">
-              {error}
-            </Alert>
-          )}
+          {error && <Alert variant="danger">{error}</Alert>}
           <div className="page-container">
             <img
               src={images.logo.image}
               alt={images.logo.name}
-              style={{ height: "10rem", width: "auto", marginTop: "5rem" }}
+              style={{
+                maxWidth: "2rem",
+                height: "auto",
+                marginLeft: "10px",
+                marginRight: "10px",
+              }}
             />
             <h1>Covared.com</h1>
             <p>You need to log in to access the teacher tools or subscribe.</p>

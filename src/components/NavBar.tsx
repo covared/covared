@@ -29,7 +29,7 @@ const NavBar: React.FC = () => {
           <img
             src={images.logo.image}
             alt={images.logo.name}
-            style={{ maxWidth: "4rem", height: "auto" }}
+            style={{ maxWidth: "2rem", height: "auto", marginLeft: "10px", marginRight: "10px"}}
           />
         </Link>
         <span>{isLoggedIn ? `${email} logged in` : "Not logged in"}</span>
