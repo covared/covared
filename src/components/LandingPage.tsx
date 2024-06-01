@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 
 
 const images = {
-  hero: { name: "hero", image: `${process.env.PUBLIC_URL}/Images/BreezEd_robot_logo3.png` }, 
+  hero: { name: "hero", image: "breezEd_robot_logo3.png" }, 
 };
 
 const features = [

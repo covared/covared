@@ -12,7 +12,7 @@ import { AIWriterAPI } from "../api/AIWriterAPI";
 // This is your test public API key.
 // const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY_TEST?? '');
 // This is your live public API key.
-const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY_LIVE?? '');
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY_LIVE?? '');
 
 
 const Checkout: React.FC = () => {
