@@ -14,9 +14,8 @@ const images = {
 };
 
 const CheckEmailCode: React.FC = () => {
-  const { setIsLoggedIn, setEmail, isLoggedIn } = useAuth();
-  const [email] = useState(() => localStorage.getItem("email") || "");
   const [code, setCode] = useState("");
+  const { setIsLoggedIn, setEmail, isLoggedIn } = useAuth();
   const [errorMessage, setErrorMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [shake, setShake] = useState(false);
@@ -28,6 +27,10 @@ const CheckEmailCode: React.FC = () => {
       router.push("/report-writer");
     }
   }, []);
+
+  const getEmail = () => {
+   return localStorage.getItem("email") || ""
+  }
 
   const handleCodeChange = (event: any) => {
     const value = event.target.value.slice(0, 6).replace(/[^0-9]/gi, "");
@@ -42,10 +45,10 @@ const CheckEmailCode: React.FC = () => {
     event.preventDefault();
     setIsLoading(true); // Start loading
     try {
-      const response = await AIWriterAPI.postCode(code, email);
+      const response = await AIWriterAPI.postCode(code, getEmail());
       if (response["success"]) {
         setIsLoggedIn(true);
-        setEmail(email);
+        setEmail(getEmail());
         router.push("/report-writer");
       } else {
         setErrorMessage("Wrong verification code, please try again.");
