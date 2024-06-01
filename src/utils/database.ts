@@ -2,11 +2,11 @@
 import { Pool } from 'pg';
 
 const pool = new Pool({
-  user: process.env.DATABASE_USERNAME,
-  host: process.env.DATABASE_HOST,
-  database: process.env.DATABASE_NAME,
-  password: process.env.DATABASE_PASSWORD,
-  port: parseInt(process.env.DATABASE_PORT || '5432', 10),
+  user: process.env.POSTGRES_USER,
+  host: process.env.POSTGRES_HOST,
+  database: process.env.POSTGRES_DATABASE,
+  password: process.env.POSTGRES_PASSWORD,
+  port: parseInt(process.env.POSTGRES_PORT || '5432', 10),
 });
 
 const initDb = async () => {
