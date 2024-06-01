@@ -64,7 +64,7 @@ const LoginPage: React.FC = () => {
               alt={images.logo.name}
               style={{ height: "10rem", width: "auto", marginTop: "5rem" }}
             />
-            <h1>BreezEd.co.uk</h1>
+            <h1>Covared.com</h1>
             <p>You need to log in to access the teacher tools or subscribe.</p>
             <p>There is no need to create a password.</p>
             <p>Enter your email, then enter the one-time passcode.</p>

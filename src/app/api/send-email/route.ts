@@ -54,7 +54,7 @@ export async function POST(req: NextRequest) {
     const mailOptions = {
       from: "info@covared.com",
       to: email,
-      subject: "BreezEd Verification Email",
+      subject: "Covared Verification Email",
       html: `<html><body><p>Thank you for logging in. Your verification code is ${verificationCode}</p></body></html>`,
     };
 
