@@ -71,7 +71,7 @@ const CheckEmailCode: React.FC = () => {
               alt={images.logo.name}
               style={{ height: "10rem", width: "auto", marginTop: "5rem" }}
             />
-            <h1>BreezEd.co.uk</h1>
+            <h1>Covared.com</h1>
             <h5>You have been sent a 6 digit code</h5>
             <h5>Please enter it below</h5>
             <div className="login-box">
