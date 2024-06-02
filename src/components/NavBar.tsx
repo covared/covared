@@ -35,7 +35,8 @@ const NavBar: React.FC = () => {
         <span>{isLoggedIn ? `${email} logged in` : "Not logged in"}</span>
       </div>
       <div className="navbar-right">
-        <Link className="space-right" href="/pricing">
+        {/* Conditionally render Pricing link as disabled */}
+        <Link className="space-right disabled-link" href="/pricing">
           Pricing
         </Link>
         {isLoggedIn ? (
