@@ -21,13 +21,6 @@ const NavBar: React.FC = () => {
     }
   };
 
-  const Navbar = () => {
-    const handlePricingClick = (e) => {
-      e.preventDefault();
-      // Optionally add an alert or some other feedback
-      alert("Pricing is currently disabled.");
-    };
-
   return (
     <div className="navbar">
       <div className="navbar-left">
@@ -42,7 +35,7 @@ const NavBar: React.FC = () => {
         <span>{isLoggedIn ? `${email} logged in` : "Not logged in"}</span>
       </div>
       <div className="navbar-right">
-        <Link className="space-right disabled-link" href="/pricing">
+        <Link className="space-right" href="/pricing">
           Pricing
         </Link>
         {isLoggedIn ? (

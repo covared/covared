@@ -388,9 +388,3 @@ button,
   align-items: center;
   text-align: center;
 }
-
-.disabled-link {
-  pointer-events: none;
-  color: grey;
-  cursor: not-allowed;
-}
