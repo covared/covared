@@ -42,7 +42,7 @@ const NavBar: React.FC = () => {
         <span>{isLoggedIn ? `${email} logged in` : "Not logged in"}</span>
       </div>
       <div className="navbar-right">
-        <Link className="space-right disabled-link" href="/pricing" onClick={handlePricingClick}>
+        <Link className="space-right disabled-link" href="/pricing">
           Pricing
         </Link>
         {isLoggedIn ? (
