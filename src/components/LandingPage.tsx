@@ -35,7 +35,7 @@ const LandingPage: React.FC = () => {
             <header className="hero-section text-center">
               <div className="hero-content">
                 <div>
-                  <h1>Covared</h1>
+                  <h1>Spring</h1>
                   <p>
                     Efficient teaching and learning tools, superpowered by AI.
                   </p>

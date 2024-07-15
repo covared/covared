@@ -25,7 +25,7 @@ const NavBar: React.FC = () => {
     <div className="navbar">
       <div className="navbar-left">
         <Link href="/">
-          Covared
+          Spring
           <img
             src={images.logo.image}
             alt={images.logo.name}
