@@ -32,7 +32,7 @@ const NavBar: React.FC = () => {
             style={{ maxWidth: "2rem", height: "auto", marginLeft: "10px", marginRight: "10px"}}
           />
         </Link>
-        <span>{isLoggedIn ? `${email} logged in` : "Not logged in"}</span>
+        <span>{isLoggedIn ? `${email} logged in` : ""}</span>
       </div>
       <div className="navbar-right">
         {/* Conditionally render Pricing link as disabled */}
