@@ -19,7 +19,7 @@ const features = [
   //{ name: 'Video Maker', comingSoon: true },
 ];
 
-const ProductPage: React.FC = () => {
+const AIReportPage: React.FC = () => {
   const router = useRouter();
 
   const loginRegisterNavigate = () => {
@@ -35,7 +35,7 @@ const ProductPage: React.FC = () => {
             <header className="hero-section text-center">
               <div className="hero-content">
                 <div>
-                  <h1>Springverse</h1>
+                  <h1>Springsverse</h1>
                   <p>
                     Efficient teaching and learning tools, superpowered by AI.
                   </p>
@@ -88,4 +88,4 @@ const ProductPage: React.FC = () => {
   );
 };
 
-export default ProductPage;
+export default AIReportPage;

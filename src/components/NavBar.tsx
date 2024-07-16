@@ -49,9 +49,9 @@ const NavBar: React.FC = () => {
             Home
           </Link>
         </li>
-        <li className={getLinkClass("/product")}>
-        <Link className="nav-link" href="/product">
-            Product
+        <li className={getLinkClass("/aireportal")}>
+        <Link className="nav-link" href="/aireportal">
+            AI Reportal
           </Link>
         </li>
         {/* Conditionally render Pricing link as disabled */}
