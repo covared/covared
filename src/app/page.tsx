@@ -16,6 +16,7 @@ export default function index() {
               Springsverse is a dynamic way to engage more students in science and maths.
             </h2>
           </div>
+          <br></br>
           <div className="button-block">
             <a href="/">
               <button>Join Springsverse pilot waitlist</button>
