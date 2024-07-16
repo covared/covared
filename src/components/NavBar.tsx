@@ -3,12 +3,15 @@ import Link from "next/link";
 
 import { useAuth } from "@/context/AuthContext";
 import { AIWriterAPI } from "@/app/api/AIWriterAPI";
+import { useRouter } from "next/router";
 
 const images = {
   logo: { name: "logo", image: "/thumbnail2-nobg.png" },
 };
 
 const NavBar: React.FC = () => {
+  const router=useRouter();
+  const currentRoute=router.basePath
   const { isLoggedIn, email, setIsLoggedIn, setEmail } = useAuth();
 
   const logout = async () => {
@@ -20,6 +23,10 @@ const NavBar: React.FC = () => {
       console.error("Failed to log out:", error);
     }
   };
+  const getLinkClass=(arg: string)=>{
+    if (currentRoute==arg) return "nav-item active"
+    return "nav-item"
+  }
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -38,18 +45,18 @@ const NavBar: React.FC = () => {
       </button>
       <div className="collapse navbar-collapse" id="navbarNav">
       <ul className="navbar-nav">
-        <li className="nav-item active">
+        <li className={getLinkClass("/")}>
           <Link className="nav-link" href="/">
             Home
           </Link>
         </li>
-        <li className="nav-item active">
+        <li className={getLinkClass("/product")}>
         <Link className="nav-link" href="/product">
             Product
           </Link>
         </li>
         {/* Conditionally render Pricing link as disabled */}
-        <li className="nav-item active">
+        <li className={getLinkClass("/pricing")}>
           <Link className="nav-link disabled-link" href="/pricing">
             Pricing
           </Link>
