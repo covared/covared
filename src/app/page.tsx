@@ -8,7 +8,9 @@ export default function index() {
           <NavBar />
 
           <div>
+            <br />
           <h1>Welcome to Springverse</h1>
+          <br></br>
           <div className="text-block"></div>
             <h2>
               Springsverse is a dynamic way to engage more students in science and maths.
@@ -19,6 +21,7 @@ export default function index() {
               <button>Join Springsverse pilot waitlist</button>
             </a>
           </div>
+          <br></br>
           <div className="buttom-text">
             <p>
               Springsverse AI-powered platform offers you new, innovative tools to engage all your students in science 
