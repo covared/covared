@@ -11,7 +11,7 @@ const images = {
 
 const NavBar: React.FC = () => {
   const router=useRouter();
-  const currentRoute=router.basePath
+  const currentRoute=router.pathname
   const { isLoggedIn, email, setIsLoggedIn, setEmail } = useAuth();
 
   const logout = async () => {
