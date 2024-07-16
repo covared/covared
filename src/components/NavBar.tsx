@@ -22,8 +22,8 @@ const NavBar: React.FC = () => {
   };
 
   return (
-    <div className="navbar">
-      <div className="navbar-left">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <div className="navbar-brand">
         <Link href="/">
           Springverse
           <img
@@ -31,28 +31,44 @@ const NavBar: React.FC = () => {
             alt={images.logo.name}
             style={{ maxWidth: "2rem", height: "auto", marginLeft: "10px", marginRight: "10px"}}
           />
-        </Link>
-        <span>{isLoggedIn ? `${email} logged in` : ""}</span>
+        </Link> 
       </div>
-      <div className="navbar-right">
+      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span className="navbar-toggler-icon"></span>
+      </button>
+      <div className="collapse navbar-collapse" id="navbarNav">
+      <ul className="navbar-nav">
+        <li className="nav-item active">
+          <Link className="nav-link" href="/">
+            Home
+          </Link>
+        </li>
+        <li className="nav-item active">
+        <Link className="nav-link" href="/product">
+            Product
+          </Link>
+        </li>
         {/* Conditionally render Pricing link as disabled */}
-        <Link className="space-right" href="/product">
-          Product
-        </Link>
-        <Link className="space-right disabled-link" href="/pricing">
-          Pricing
-        </Link>
+        <li className="nav-item active">
+          <Link className="nav-link disabled-link" href="/pricing">
+            Pricing
+          </Link>
+        </li>
+        <li className="nav-item">
         {isLoggedIn ? (
-          <button onClick={logout} className="btn btn-custom-standard">
+          <Link href="/" onClick={logout} className="nav-link">
             Logout
-          </button>
+          </Link>
         ) : (
-          <Link href="/login" className="btn btn-custom-standard">
+          <Link href="/login" className="nav-link">
             Login / Register
           </Link>
         )}
-      </div>
-    </div>
+        </li>
+        
+      </ul>
+  </div>     
+</nav>
   );
 };
 
