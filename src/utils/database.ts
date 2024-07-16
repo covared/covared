@@ -11,6 +11,7 @@ const pool = new Pool({
 });
 
 const initDb = async () => {
+  if (!process.env.POSTGRES_PRISMA_URL) return;
   const client = await pool.connect();
   try {
     // Create the breezed_users table if it doesn't exist
