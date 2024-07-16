@@ -35,7 +35,7 @@ const AIReportPage: React.FC = () => {
             <header className="hero-section text-center">
               <div className="hero-content">
                 <div>
-                  <h1>Springsverse</h1>
+                  <h2>AI Reportal</h2>
                   <p>
                     Efficient teaching and learning tools, superpowered by AI.
                   </p>
