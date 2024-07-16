@@ -36,7 +36,7 @@ const NavBar: React.FC = () => {
       </div>
       <div className="navbar-right">
         {/* Conditionally render Pricing link as disabled */}
-        <Link className="space-right disabled-link" href="/product">
+        <Link className="space-right" href="/product">
           Product
         </Link>
         <Link className="space-right disabled-link" href="/pricing">
