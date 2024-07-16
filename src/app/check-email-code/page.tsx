@@ -76,7 +76,7 @@ const CheckEmailCode: React.FC = () => {
                 marginRight: "10px",
               }}
             />
-            <h1>Spring</h1>
+            <h1>Springverse</h1>
             <h5>You have been sent a 6 digit code</h5>
             <h5>Please enter it below</h5>
             <div className="login-box">

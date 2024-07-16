@@ -52,9 +52,9 @@ export async function POST(req: NextRequest) {
     });
 
     const mailOptions = {
-      from: "info@springsverse.co.uk.com",
+      from: "info@springsverse.co.uk",
       to: email,
-      subject: "Spring Verification Email",
+      subject: "Springverse Verification Email",
       html: `<html><body><p>Thank you for logging in. Your verification code is ${verificationCode}</p></body></html>`,
     };
 
