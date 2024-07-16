@@ -3,15 +3,14 @@ import Link from "next/link";
 
 import { useAuth } from "@/context/AuthContext";
 import { AIWriterAPI } from "@/app/api/AIWriterAPI";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 
 const images = {
   logo: { name: "logo", image: "/thumbnail2-nobg.png" },
 };
 
 const NavBar: React.FC = () => {
-  const router=useRouter();
-  const currentRoute=router.pathname
+  const currentRoute=usePathname()
   const { isLoggedIn, email, setIsLoggedIn, setEmail } = useAuth();
 
   const logout = async () => {
