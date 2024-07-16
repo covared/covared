@@ -19,7 +19,7 @@ const features = [
   //{ name: 'Video Maker', comingSoon: true },
 ];
 
-const LandingPage: React.FC = () => {
+const ProductPage: React.FC = () => {
   const router = useRouter();
 
   const loginRegisterNavigate = () => {
@@ -88,4 +88,4 @@ const LandingPage: React.FC = () => {
   );
 };
 
-export default LandingPage;
+export default ProductPage;
