@@ -15,7 +15,7 @@ export default function index() {
             </h2>
           </div>
           <div className="button-block">
-            <a href="https://example.com">
+            <a href="/">
               <button>Join Springsverse pilot waitlist</button>
             </a>
           </div>
