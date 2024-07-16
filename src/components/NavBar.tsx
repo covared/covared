@@ -49,15 +49,11 @@ const NavBar: React.FC = () => {
             Home
           </Link>
         </li>
-        <li className="nav-item dropdown">
-          <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Products</a>
-            <div className="dropdown-menu">
-              <a className="dropdown-item" href="/aireportal">
-                AI Reportal
-              </a>
-            </div>
+        <li className={getLinkClass("/aireportal")}>
+        <Link className="nav-link" href="/aireportal">
+            AI Reportal
+          </Link>
         </li>
-        
         {/* Conditionally render Pricing link as disabled */}
         <li className={getLinkClass("/pricing")}>
           <Link className="nav-link disabled-link" href="/pricing">
