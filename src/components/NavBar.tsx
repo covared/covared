@@ -43,7 +43,7 @@ const NavBar: React.FC = () => {
         <span className="navbar-toggler-icon"></span>
       </button>
       <div className="collapse navbar-collapse" id="navbarNav">
-      <ul className="navbar-nav">
+      <ul className="nav nav-pills">
         <li className={getLinkClass("/")}>
           <Link className="nav-link" href="/">
             Home
