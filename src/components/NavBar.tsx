@@ -52,9 +52,9 @@ const NavBar: React.FC = () => {
         <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Products</a>
             <div className="dropdown-menu">
-              <Link className="dropdown-item" href="/aireportal">
+              <a className="dropdown-item" href="/aireportal">
                 AI Reportal
-              </Link>
+              </a>
             </div>
         </li>
         
