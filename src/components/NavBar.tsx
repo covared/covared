@@ -52,11 +52,9 @@ const NavBar: React.FC = () => {
         </li>
         <li className="nav-item">
           <NavDropdown className="basic-nav-dropdown" title="Dropdown">
-            <NavDropdown.Item href="/aireportal">Test</NavDropdown.Item>
+            <NavDropdown.Item className="nav-link" href="/aireportal">Sparks City</NavDropdown.Item>
+            <NavDropdown.Item className="nav-link" href="/aireportal">AI Reportal</NavDropdown.Item>
           </NavDropdown>
-        <Link className="nav-link" href="/aireportal">
-            AI Reportal
-          </Link>
         </li>
         {/* Conditionally render Pricing link as disabled */}
         <li className={getLinkClass("/pricing")}>
