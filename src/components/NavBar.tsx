@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useAuth } from "@/context/AuthContext";
 import { AIWriterAPI } from "@/app/api/AIWriterAPI";
 import { usePathname } from "next/navigation";
+import { NavDropdown } from "react-bootstrap";
 
 const images = {
   logo: { name: "logo", image: "/thumbnail2-nobg.png" },
@@ -49,10 +50,11 @@ const NavBar: React.FC = () => {
             Home
           </Link>
         </li>
-        <li className={getLinkClass("/aireportal")}>
-        <Link className="nav-link" href="/aireportal">
-            AI Reportal
-          </Link>
+        <li className="nav-item">
+          <NavDropdown className="basic-nav-dropdown" title="Products">
+            <NavDropdown.Item className="nav-link" href="/sparkscity">Sparks City</NavDropdown.Item>
+            <NavDropdown.Item className="nav-link" href="/aireportal">AI Reportal</NavDropdown.Item>
+          </NavDropdown>
         </li>
         {/* Conditionally render Pricing link as disabled */}
         <li className={getLinkClass("/pricing")}>
