@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useAuth } from "@/context/AuthContext";
 import { AIWriterAPI } from "@/app/api/AIWriterAPI";
 import { usePathname } from "next/navigation";
+import { NavDropdown } from "react-bootstrap";
 
 const images = {
   logo: { name: "logo", image: "/thumbnail2-nobg.png" },
@@ -49,7 +50,10 @@ const NavBar: React.FC = () => {
             Home
           </Link>
         </li>
-        <li className={getLinkClass("/aireportal")}>
+        <li className="nav-item">
+          <NavDropdown className="basic-nav-dropdown" title="Dropdown">
+            <NavDropdown.Item href="/aireportal">Test</NavDropdown.Item>
+          </NavDropdown>
         <Link className="nav-link" href="/aireportal">
             AI Reportal
           </Link>
