@@ -46,16 +46,6 @@ const AIReportPage: React.FC = () => {
                     Get Started for Free
                   </button>
                 </div>
-                <img
-                  src={images.hero.image}
-                  alt={images.hero.name}
-                  style={{
-                    width: "auto",
-                    height: "10vh",
-                    marginLeft: "10px",
-                    paddingTop: "20px",
-                  }}
-                />
               </div>
             </header>
 
