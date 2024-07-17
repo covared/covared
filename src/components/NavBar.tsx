@@ -52,7 +52,7 @@ const NavBar: React.FC = () => {
         </li>
         <li className="nav-item">
           <NavDropdown className="basic-nav-dropdown" title="Dropdown">
-            <NavDropdown.Item className="nav-link" href="/aireportal">Sparks City</NavDropdown.Item>
+            <NavDropdown.Item className="nav-link" href="/sparkscity">Sparks City</NavDropdown.Item>
             <NavDropdown.Item className="nav-link" href="/aireportal">AI Reportal</NavDropdown.Item>
           </NavDropdown>
         </li>
