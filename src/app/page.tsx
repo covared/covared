@@ -1,5 +1,6 @@
 import NavBar from "@/components/NavBar";
 
+let event_url = "https://www.eventbrite.com/e/springsverse-pilot-kick-off-day-tickets-949373099497?aff=oddtdtcreator";
 export default function index() {
   return (
     <div className="container">
@@ -18,7 +19,7 @@ export default function index() {
           </div>
           <br></br>
           <div className="button-block">
-            <a href="/">
+            <a href= {event_url} target="_blank" rel="noopener noreferrer">
               <button>Join Springsverse pilot waitlist</button>
             </a>
           </div>
