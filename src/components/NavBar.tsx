@@ -58,7 +58,7 @@ const NavBar: React.FC = () => {
         </li>
         {/* Conditionally render Pricing link as disabled */}
         <li className={getLinkClass("/pricing")}>
-          <Link className="nav-link disabled-link" href="/pricing">
+          <Link className="nav-link" href="/pricing">
             Pricing
           </Link>
         </li>
