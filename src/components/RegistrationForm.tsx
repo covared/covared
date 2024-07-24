@@ -58,7 +58,7 @@ export default function RegisterForm() {
         <label>Event:</label>
         <input type="text" name="event" value={formData.event} onChange={handleChange} required />
       </div>
-      <button type="submit">Register</button>
+      <button type="submit">Submit Registration</button>
     </form>
   );
 }

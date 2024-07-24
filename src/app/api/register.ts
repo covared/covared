@@ -1,5 +1,4 @@
 // pages/api/register.ts
-import { useState } from 'react';
 import { NextApiRequest, NextApiResponse } from 'next';
 import nodemailer from 'nodemailer';
 

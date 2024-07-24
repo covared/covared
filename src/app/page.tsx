@@ -2,7 +2,7 @@
 import { useState } from 'react';
 
 import NavBar from "@/components/NavBar";
-import RegisterForm from '../components/RegistrationForm';
+import Link from 'next/link';
 
 
 export default function index() {
@@ -29,8 +29,9 @@ export default function index() {
           </div>
           <br></br>
           <div className="button-block">
-            <button onClick={handleRegisterClick}>Register</button>
-              {showForm && <RegisterForm />}
+            <Link href="/register">
+              <button>Register</button>
+            </Link>
           </div>
           <br></br>
           <div className="buttom-text">
