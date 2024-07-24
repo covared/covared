@@ -1,10 +1,9 @@
+"use client";
 import { useState } from 'react';
 
 import NavBar from "@/components/NavBar";
 import RegisterForm from '../components/RegistrationForm';
 
-
-let event_url = "https://www.eventbrite.com/e/springsverse-pilot-kick-off-day-tickets-949373099497?aff=oddtdtcreator";
 
 export default function index() {
   const [showForm, setShowForm] = useState(false);
