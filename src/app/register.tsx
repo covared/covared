@@ -1,4 +1,4 @@
-// pages/register.tsx
+// app/register.tsx
 "use client";
 
 import RegisterForm from '../components/RegistrationForm';
