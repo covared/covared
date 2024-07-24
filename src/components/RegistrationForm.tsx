@@ -2,7 +2,6 @@
 "use client";
 import React from "react";
 
-import NavBar from "./NavBar";
 import { useState, ChangeEvent, FormEvent } from 'react';
 
 interface FormData {
