@@ -22,7 +22,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
   const mailOptions = {
     from: "info@springsverse.co.uk",   //process.env.EMAIL_FROM,
-    to: "y.rasheedah@springsverse.co.uk",
+    to: "qasimbabatunde@gmail.com",  //"y.rasheedah@springsverse.co.uk",
     subject: 'Event Registration',
     text: `Name: ${name}\nEmail: ${email}\nEvent: ${event}`
   };
