@@ -1,7 +1,7 @@
 // app/register.tsx
 "use client";
 
-import RegisterForm from '../components/RegistrationForm';
+import RegisterForm from '@/components/RegistrationForm';
 import NavBar from "@/components/NavBar";
 
 
