@@ -1,4 +1,4 @@
-// app/api/register/route.ts
+// pages/api/register.ts
 import { NextApiRequest, NextApiResponse } from 'next';
 import nodemailer from 'nodemailer';
 
