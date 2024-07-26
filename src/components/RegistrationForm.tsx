@@ -39,6 +39,7 @@ export default function RegisterForm() {
     if (response.ok) {
       alert('Registration successful!');
     } else {
+      alert(response)
       alert('Registration failed.');
     }
   };
