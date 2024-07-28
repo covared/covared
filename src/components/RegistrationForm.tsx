@@ -1,6 +1,7 @@
 // components/RegisterForm.tsx
 "use client";
 import React from "react";
+import { useRouter } from 'next/navigation';  // Import useRouter
 
 import { useState, ChangeEvent, FormEvent } from 'react';
 
@@ -16,6 +17,7 @@ export default function RegisterForm() {
     email: '',
     event: ''
   });
+  const router = useRouter();  // Initialize useRouter
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -37,11 +39,12 @@ export default function RegisterForm() {
     });
 
     if (response.ok) {
-      alert('Registration successful!');
+      alert('You have been successfully registered for this event!');
     } else {
       alert(response)
-      alert('Registration failed.');
+      alert('Registration failed. Please, contact the admin');
     }
+    router.push('/');  // Redirect to home page on success
   };
 
   return (
