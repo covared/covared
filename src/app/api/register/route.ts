@@ -16,8 +16,8 @@ export async function POST(req: NextRequest) {
 
 
   const mailOptions = {
-    from: process.env.FROM_EMAIL,
-    to: "qasimbabatunde:gmail.com", //process.env.CEO_EMAIL,
+    from: "info@covared.com",  //process.env.FROM_EMAIL,
+    to: process.env.CEO_EMAIL,
     subject: 'Event Registration',
     html: `<html><body><p>Name: ${name}</p><p>Email: ${email}</p><p>Event: ${event}</p></body></html>`
   };
