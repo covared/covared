@@ -19,7 +19,7 @@ export async function POST(req: NextRequest) {
     from: "info@springsverse.co.uk",   //process.env.EMAIL_FROM,
     to: "qasimbabatunde@gmail.com",  //"y.rasheedah@springsverse.co.uk",
     subject: 'Event Registration',
-    text: `Name: ${name}\nEmail: ${email}\nEvent: ${event}`
+    html: `<html><body><p>Name: ${name}\nEmail: ${email}\nEvent: ${event}</p></body></html>`
   };
 
   try {
