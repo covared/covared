@@ -1,14 +1,9 @@
 // pages/api/register.ts
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
-const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-  if (req.method !== 'POST') {
-    res.status(405).send({ message: 'Only POST requests allowed' });
-    return;
-  }
-
-  const { name, email, event } = req.body;
+export async function POST(req: NextRequest) {
+  const { name, email, event } = await req.json();
 
   // Setup the email transporter
   const transporter = nodemailer.createTransport({
@@ -29,10 +24,9 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
   try {
     await transporter.sendMail(mailOptions);
-    res.status(200).json({ message: 'Email sent successfully' });
+    NextResponse.json({ message: 'Email sent successfully' });
   } catch (error) {
-    res.status(500).json({ message: 'Error sending email', error });
+    NextResponse.json({ message: 'Error sending email', error, status:500 });
   }
 };
 
-export default handler;
