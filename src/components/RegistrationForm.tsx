@@ -4,6 +4,7 @@ import React from "react";
 import { useRouter } from 'next/navigation';  // Import useRouter
 
 import { useState, ChangeEvent, FormEvent } from 'react';
+import '../styles/RegistrationForm.module.css'; // Import the CSS module
 
 interface FormData {
   name: string;
@@ -48,20 +49,22 @@ export default function RegisterForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label>Name:</label>
-        <input type="text" name="name" value={formData.name} onChange={handleChange} required />
-      </div>
-      <div>
-        <label>Email:</label>
-        <input type="email" name="email" value={formData.email} onChange={handleChange} required />
-      </div>
-      <div>
-        <label>Event:</label>
-        <input type="text" name="event" value={formData.event} onChange={handleChange} required />
-      </div>
-      <button type="submit">Submit Registration</button>
-    </form>
+    <div className="container">
+      <form onSubmit={handleSubmit}>
+        <div className="formGroup">
+          <label className="label">Name:</label>
+          <input type="text" name="name" value={formData.name} onChange={handleChange} className="input" required />
+        </div>
+        <div className="formGroup">
+          <label className="label">Email:</label>
+          <input type="email" name="email" value={formData.email} onChange={handleChange} className="input" required />
+        </div>
+        <div className="formGroup">
+          <label className="label">Event:</label>
+          <input type="text" name="event" value={formData.event} onChange={handleChange} className="input" required />
+        </div>
+        <button type="submit" className="button">Submit Registration</button>
+      </form>
+    </div>
   );
 }
