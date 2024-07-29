@@ -52,7 +52,7 @@ const Return: React.FC = () => {
               </p>
               <p>
                 If you have any questions, please email{" "}
-                <a href="mailto:info@springsverse.co.uk">info@springsverse.co.uk</a>.
+                <a href={process.env.INFO_EMAIL}>info@springsverse.co.uk</a>.
               </p>
               <button
                 className="btn btn-custom-standard mt-1"
