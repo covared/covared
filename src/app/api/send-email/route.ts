@@ -52,7 +52,7 @@ export async function POST(req: NextRequest) {
     });
 
     const mailOptions = {
-      from: process.env.FROM_EMAIL,
+      from: process.env.INFO_EMAIL,
       to: email,
       subject: "Springverse Verification Email",
       html: `<html><body><p>Thank you for logging in. Your verification code is ${verificationCode}</p></body></html>`,
