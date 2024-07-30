@@ -4,10 +4,7 @@ import React from "react";
 import { useRouter } from 'next/navigation';  // Import useRouter
 import { Container } from "react-bootstrap";
 import { useState, ChangeEvent, FormEvent } from 'react';
-import Col from 'react-bootstrap/Col';
-import Form from 'react-bootstrap/Form';
-import Row from 'react-bootstrap/Row';
-import Button from 'react-bootstrap/Button';
+import { Row, Col, Form, Button } from 'react-bootstrap';
 
 
 interface FormData {
