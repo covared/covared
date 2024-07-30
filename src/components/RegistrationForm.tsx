@@ -29,7 +29,7 @@ export default function RegisterForm() {
   });
   const router = useRouter();  // Initialize useRouter
   const isAgreeYes = formData.attendance === 'yes';
-  const isAlternativeDateYes = formData.altdate === 'no';
+  const isAlternativeDateYes = formData.altdate === 'yes';
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -158,7 +158,7 @@ export default function RegisterForm() {
           </Col>
         </Form.Group>
       )}
-        <Button type="submit" variant="primary" disabled={(!isAgreeYes && formData.newdate === '') || isAlternativeDateYes}>
+        <Button type="submit" variant="primary" disabled={(!isAgreeYes && formData.newdate === '') || (!isAgreeYes && isAlternativeDateYes)}>
           Submit Registration
         </Button>
       </Form>
