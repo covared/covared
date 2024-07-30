@@ -1,6 +1,7 @@
 "use client";
-import Link from "next/link";
-
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 import { useAuth } from "@/context/AuthContext";
 import { AIWriterAPI } from "@/app/api/AIWriterAPI";
 import { usePathname } from "next/navigation";
@@ -23,60 +24,47 @@ const NavBar: React.FC = () => {
       console.error("Failed to log out:", error);
     }
   };
-  const getLinkClass=(arg: string)=>{
-    if (currentRoute==arg) return "nav-item active"
-    return "nav-item"
-  }
+  
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <div className="navbar-brand">
-        <Link href="/">
-          Springverse
-          <img
-            src={images.logo.image}
-            alt={images.logo.name}
-            style={{ maxWidth: "2rem", height: "auto", marginLeft: "10px", marginRight: "10px"}}
-          />
-        </Link> 
-      </div>
-      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span className="navbar-toggler-icon"></span>
-      </button>
-      <div className="collapse navbar-collapse" id="navbarNav">
-      <ul className="nav nav-pills">
-        <li className={getLinkClass("/")}>
-          <Link className="nav-link" href="/">
-            Home
-          </Link>
-        </li>
-        <li className="nav-item">
-          <NavDropdown className="basic-nav-dropdown" title="Products">
-            <NavDropdown.Item className="nav-link" href="/sparkscity">Sparks City</NavDropdown.Item>
-            <NavDropdown.Item className="nav-link" href="/aireportal">AI Reportal</NavDropdown.Item>
-          </NavDropdown>
-        </li>
-        {/* Conditionally render Pricing link as disabled */}
-        <li className={getLinkClass("/pricing")}>
-          <Link className="nav-link" href="/pricing">
-            Pricing
-          </Link>
-        </li>
-        <li className="nav-item">
-        {isLoggedIn ? (
-          <Link href="/" onClick={logout} className="nav-link">
-            Logout
-          </Link>
-        ) : (
-          <Link href="/login" className="nav-link">
-            Login / Register
-          </Link>
-        )}
-        </li>
-        
-      </ul>
-  </div>     
-</nav>
+    <Navbar expand="lg" className="bg-body-tertiary">
+      <Container>
+        <Navbar.Brand href="/">
+            Springverse
+            <img
+              src={images.logo.image}
+              alt={images.logo.name}
+              style={{ maxWidth: "2rem", height: "auto", marginLeft: "10px", marginRight: "10px"}}
+            />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link className="nav-link" href="/">
+              Home
+            </Nav.Link>
+            <NavDropdown className="basic-nav-dropdown" title="Products">
+              <NavDropdown.Item className="nav-link" href="/sparkscity">Sparks City</NavDropdown.Item>
+              <NavDropdown.Item className="nav-link" href="/aireportal">AI Reportal</NavDropdown.Item>
+            </NavDropdown>
+              {/* Conditionally render Pricing link as disabled */}
+            <Nav.Link className="nav-link" href="/pricing">
+                Pricing
+            </Nav.Link>
+            {isLoggedIn ? (
+              <Nav.Link href="/" onClick={logout} className="nav-link">
+                Logout
+              </Nav.Link>
+            ) : (
+              <Nav.Link href="/login" className="nav-link">
+                Login / Register
+              </Nav.Link>
+            )}          
+            
+          </Nav> 
+        </Navbar.Collapse>
+      </Container>    
+    </Navbar>
   );
 };
 
