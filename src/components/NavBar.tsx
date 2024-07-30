@@ -27,7 +27,7 @@ const NavBar: React.FC = () => {
   
 
   return (
-    <Navbar collapseOnSelect bg="light" data-bs-theme="light" expand="lg" className="bg-body-tertiary justify-content-between">
+    <Navbar collapseOnSelect bg="light" data-bs-theme="light" expand="md" className="bg-body-tertiary justify-content-between">
       <Container>
         <Navbar.Brand href="/">
             Springverse
@@ -39,28 +39,35 @@ const NavBar: React.FC = () => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
+          <Nav className="me-auto" variant="pills" defaultActiveKey="/">
+          <Nav.Item>
             <Nav.Link className="nav-link" href="/">
               Home
             </Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
             <NavDropdown className="basic-nav-dropdown" title="Products">
-              <NavDropdown.Item className="nav-link" href="/sparkscity">Sparks City</NavDropdown.Item>
-              <NavDropdown.Item className="nav-link" href="/aireportal">AI Reportal</NavDropdown.Item>
+              <NavDropdown.Item eventKey="link-2.1" className="nav-link" href="/sparkscity">Sparks City</NavDropdown.Item>
+              <NavDropdown.Item eventKey="link-2.2" className="nav-link" href="/aireportal">AI Reportal</NavDropdown.Item>
             </NavDropdown>
-              {/* Conditionally render Pricing link as disabled */}
-            <Nav.Link className="nav-link" href="/pricing">
-                Pricing
+          </Nav.Item>
+          <Nav.Item>
+            {/* Conditionally render Pricing link as disabled */}
+            <Nav.Link eventKey="link-3" className="nav-link" href="/pricing">
+              Pricing
             </Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
             {isLoggedIn ? (
-              <Nav.Link href="/" onClick={logout} className="nav-link">
+              <Nav.Link eventKey="link-4" href="/" onClick={logout} className="nav-link">
                 Logout
               </Nav.Link>
             ) : (
-              <Nav.Link href="/login" className="nav-link">
+              <Nav.Link eventKey="link-5" href="/login" className="nav-link">
                 Login / Register
               </Nav.Link>
-            )}          
-            
+            )}
+          </Nav.Item>
           </Nav> 
         </Navbar.Collapse>
       </Container>    
