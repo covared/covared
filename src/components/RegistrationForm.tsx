@@ -33,14 +33,20 @@ export default function RegisterForm() {
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
+    setFormData((prevData) => {
+      let newData = { ...prevData, [name]: value };
 
       // Reset dependent fields when their conditions change
-      ...(name === 'attendance' && value === 'no' ? { altdate: '', selectedDate: '' } : {}),
-      ...(name === 'altdate' && value === 'no' ? { newate: '' } : {})
-    }));
+      if (name === 'attendance' && value === 'yes') {
+        newData = { ...newData, altdate: '', newdate: '' };
+      } else if (name === 'attendance' && value === 'no') {
+        newData = { ...newData, altdate: '', newdate: '' };
+      } else if (name === 'altdate' && value === 'no') {
+        newData = { ...newData, newdate: '' };
+      }
+
+      return newData;
+    });
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
