@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 import NavBar from "@/components/NavBar";
 import Link from 'next/link';
+import Button from 'react-bootstrap/Button';
 
 
 export default function index() {
@@ -30,7 +31,7 @@ export default function index() {
           <br></br>
           <div className="button-block">
             <Link href="/register">
-              <button>Register</button>
+              <Button as='a' variant="primary">Register</Button>
             </Link>
           </div>
           <br></br>
