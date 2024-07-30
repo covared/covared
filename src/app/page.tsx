@@ -30,9 +30,7 @@ export default function index() {
           </div>
           <br></br>
           <div className="button-block">
-            <Link href="/register">
-              <Button as='a' variant="primary">Register</Button>
-            </Link>
+            <Button as='a' href="/register" variant="primary">Register</Button>
           </div>
           <br></br>
           <div className="buttom-text">
