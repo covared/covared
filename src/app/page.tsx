@@ -1,8 +1,7 @@
 "use client";
 import { useState } from 'react';
-
+import Container from 'react-bootstrap/Container';
 import NavBar from "@/components/NavBar";
-import Link from 'next/link';
 import Button from 'react-bootstrap/Button';
 
 
@@ -14,9 +13,7 @@ export default function index() {
   };
 
   return (
-    <div className="container">
-      <div className="row justify-content-center">
-        <div className="col-10">
+    <Container>
           <NavBar />
 
           <div>
@@ -55,9 +52,6 @@ export default function index() {
               innovative tools and ready-to-go resources to build your future scientists and mathematicians.
             </p>
           </div>
-        </div>
-      </div>
-    
-    </div>
+    </Container>
   )
 }

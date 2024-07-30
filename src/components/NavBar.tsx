@@ -13,7 +13,7 @@ const images = {
 
 const NavBar: React.FC = () => {
   const currentRoute=usePathname()
-  const { isLoggedIn, email, setIsLoggedIn, setEmail } = useAuth();
+  const { isLoggedIn, setIsLoggedIn, setEmail } = useAuth();
 
   const logout = async () => {
     try {
@@ -27,7 +27,7 @@ const NavBar: React.FC = () => {
   
 
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar bg="dark" data-bs-theme="dark" expand="lg" className="bg-body-tertiary justify-content-between">
       <Container>
         <Navbar.Brand href="/">
             Springverse
