@@ -158,7 +158,7 @@ export default function RegisterForm() {
           </Col>
         </Form.Group>
       )}
-        <Button type="submit" variant="primary" disabled={!isAgreeYes && formData.newdate === '' && !isAlternativeDateYes}>
+        <Button type="submit" variant="primary" disabled={(!isAgreeYes && formData.newdate === '') || isAlternativeDateYes}>
           Submit Registration
         </Button>
       </Form>
