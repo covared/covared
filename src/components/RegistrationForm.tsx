@@ -14,7 +14,6 @@ interface FormData {
   name: string;
   schoolname: string;
   email: string;
-  event: string;
   questions: string;
   attendance: string;
   altdate: string;
@@ -26,7 +25,6 @@ export default function RegisterForm() {
     name: '',
     schoolname: '',
     email: '',
-    event: '',
     questions: '',
     attendance: '',
     altdate: '',
@@ -71,18 +69,12 @@ export default function RegisterForm() {
           <Form.Label column sm="4">Name:</Form.Label>
           <Col sm="8">
             <Form.Control as="input" name="name" value={formData.name} onChange={handleChange} required />
-            <Form.Control.Feedback type="invalid">
-            Please provide a valid name.
-          </Form.Control.Feedback>
           </Col>
         </Form.Group>
         <Form.Group as={Row} className="mb-3" controlId="exampleForm.ControlInput2">
           <Form.Label column sm="4">School Name:</Form.Label>
           <Col sm="8">
             <Form.Control as="input" name="schoolname" value={formData.schoolname} onChange={handleChange} required />
-            <Form.Control.Feedback type="invalid">
-            Please provide a school name.
-          </Form.Control.Feedback>
           </Col>
         </Form.Group>
         <Form.Group as={Row} className="mb-3" controlId="exampleForm.ControlInput3">
