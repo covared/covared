@@ -29,7 +29,7 @@ export default function RegisterForm() {
   });
   const router = useRouter();  // Initialize useRouter
   const isAgreeYes = formData.attendance === 'yes';
-  const isAlternativeDateYes = formData.altdate === 'yes';
+  const isAlternativeDateYes = formData.altdate === 'no';
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
