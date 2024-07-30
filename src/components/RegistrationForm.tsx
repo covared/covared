@@ -106,7 +106,7 @@ export default function RegisterForm() {
           <Form.Label as="legend" column sm={4}>
             My school can join the pilot kick-off on Wednesday 2 October, 2024
           </Form.Label>
-          <Col sm={8}>
+          <Col sm={4}>
             <Form.Check
               type="radio"
               label="Yes"
@@ -169,7 +169,9 @@ export default function RegisterForm() {
           </Col>
         </Form.Group>
       )}
-        <Button type="submit" variant="primary">Submit Registration</Button>
+        <Button type="submit" variant="primary" disabled={!isAgreeYes && formData.newdate !== ''}>
+          Submit Registration
+        </Button>
         {/* disabled={!isAgreeYes && formData.altdate !== 'yes'} */}
       </Form>
     </Container>
