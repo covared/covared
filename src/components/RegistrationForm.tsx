@@ -172,7 +172,6 @@ export default function RegisterForm() {
         <Button type="submit" variant="primary" disabled={!isAgreeYes && formData.newdate === ''}>
           Submit Registration
         </Button>
-        {/* disabled={!isAgreeYes && formData.altdate !== 'yes'} */}
       </Form>
     </Container>
   );
