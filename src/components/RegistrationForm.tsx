@@ -101,18 +101,20 @@ export default function RegisterForm() {
             />
           </Col>
         </Form.Group>
-      <fieldset>
-        <Form.Group as={Row} className="mb-3">
+      <fieldset className="mb-3">
+        <Form.Group as={Row}>
           <Form.Label as="legend" column sm={4}>
             My school can join the pilot kick-off on Wednesday 2 October, 2024
           </Form.Label>
-          <Col sm={4}>
+          <Col sm={8}>
             <Form.Check
               type="radio"
               label="Yes"
               name="attendance"
               id="formHorizontalRadios1"
-              value={formData.attendance} onChange={handleChange}
+              value="yes"
+              checked={formData.attendance === 'yes'}
+              onChange={handleChange}
             />
           </Col>
           <Col sm={4}>
@@ -121,15 +123,17 @@ export default function RegisterForm() {
               label="No"
               name="attendance"
               id="formHorizontalRadios2"
-              value={formData.attendance} onChange={handleChange}
+              value="no"
+              checked={formData.attendance === 'no'}
+              onChange={handleChange}
             />
           </Col>
         </Form.Group>
       </fieldset>
-
+      
       {formData.attendance === 'no' && (
-        <fieldset>
-          <Form.Group as={Row} className="mb-3">
+        <fieldset className="mb-3">
+          <Form.Group as={Row}>
             <Form.Label as="legend" column sm={4}>
               I'd like to consider another suitable date:
             </Form.Label>
@@ -138,8 +142,9 @@ export default function RegisterForm() {
                 type="radio"
                 label="Yes"
                 name="altdate"
-                id="formHorizontalRadios1"
-                value={formData.altdate} onChange={handleChange}
+                id="formHorizontalRadios3"
+                value="yes"
+                checked={formData.altdate === 'yes'} onChange={handleChange}
               />
             </Col>
             <Col sm={4}>
@@ -147,8 +152,9 @@ export default function RegisterForm() {
                 type="radio"
                 label="No"
                 name="altdate"
-                id="formHorizontalRadios2"
-                value={formData.altdate} onChange={handleChange}
+                id="formHorizontalRadios4"
+                value="no"
+                checked={formData.altdate === 'no'} onChange={handleChange}
               />
             </Col>
           </Form.Group>
@@ -157,13 +163,12 @@ export default function RegisterForm() {
 
       {isAlternativeDateYes && (
         <Form.Group as={Row} className="mb-3" controlId="exampleForm.ControlInput4">
-          <Form.Label column sm={4}>Select Date:</Form.Label>
+          <Form.Label column sm={4}>Select a Date:</Form.Label>
           <Col sm={8}>
             <Form.Control type="date" name="newdate" value={formData.newdate} onChange={handleChange} />
           </Col>
         </Form.Group>
       )}
-
         <Button type="submit" variant="primary">Submit Registration</Button>
         {/* disabled={!isAgreeYes && formData.altdate !== 'yes'} */}
       </Form>
