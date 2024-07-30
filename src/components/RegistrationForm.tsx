@@ -31,12 +31,16 @@ export default function RegisterForm() {
   const isAgreeYes = formData.attendance === 'yes';
   const isAlternativeDateYes = formData.altdate === 'yes';
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+
+      // Reset dependent fields when their conditions change
+      ...(name === 'attendance' && value === 'no' ? { altdate: '', selectedDate: '' } : {}),
+      ...(name === 'altdate' && value === 'no' ? { newate: '' } : {})
+    }));
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -57,6 +61,16 @@ export default function RegisterForm() {
       alert('Registration failed. Please, contact the admin');
     }
     router.push('/');  // Redirect to home page on success
+  };
+
+  // Determine if the submit button should be enabled
+  const isSubmitEnabled = () => {
+    if (formData.attendance === 'yes') return true;
+    if (formData.attendance === 'no') {
+      if (formData.altdate === 'no') return true;
+      if (formData.altdate === 'yes' && formData.newdate) return true;
+    }
+    return false;
   };
 
   return (
@@ -158,9 +172,7 @@ export default function RegisterForm() {
           </Col>
         </Form.Group>
       )}
-        <Button type="submit" variant="primary" disabled={formData.attendance !== 'yes' &&
-                                                          (formData.attendance === 'no' && formData.altdate === '' ||
-                                                          formData.altdate === 'yes' && formData.newdate === '')}>
+        <Button type="submit" variant="primary" disabled={!isSubmitEnabled()}>
           Submit Registration
         </Button>
       </Form>
