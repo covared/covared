@@ -5,6 +5,7 @@ import { EmbeddedCheckoutProvider, EmbeddedCheckout } from '@stripe/react-stripe
 import { useAuth } from "@/context/AuthContext";
 import NavBar from "@/components/NavBar";
 import { AIWriterAPI } from "../api/AIWriterAPI";
+import { Container, Row, Col } from 'react-bootstrap';
 
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
@@ -30,9 +31,9 @@ const Checkout: React.FC = () => {
   }, []);
 
   return (
-    <div className="container">
-      <div className="row justify-content-center">
-        <div className="col-10">
+    <Container>
+      <Row className="justify-content-center">
+        <Col xs={12} md={10} lg={10}>
           <NavBar /> 
 					<div id="checkout">
 						{clientSecret && (
@@ -44,9 +45,9 @@ const Checkout: React.FC = () => {
 								</EmbeddedCheckoutProvider>
 						)}
 					</div>
-				</div>
-			</div>
-		</div>
+          </Col>
+      </Row>
+    </Container>
   )
 }
 

@@ -14,7 +14,7 @@ export default function index() {
   return (
     <Container>
       <Row className="justify-content-center">
-        <Col xs={12} md={10} lg={8}>
+        <Col xs={12} md={10} lg={10}>
           <NavBar />
             <div>
               <br />

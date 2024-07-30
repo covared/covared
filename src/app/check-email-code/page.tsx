@@ -5,6 +5,7 @@ import React, { useState, useEffect } from "react";
 import NavBar from "@/components/NavBar";
 import { useAuth } from "@/context/AuthContext";
 import { AIWriterAPI } from "../api/AIWriterAPI";
+import { Container, Row, Col } from 'react-bootstrap';
 
 const images = {
   logo: {
@@ -61,9 +62,9 @@ const CheckEmailCode: React.FC = () => {
   };
 
   return (
-    <div className="container">
-      <div className="row justify-content-center">
-        <div className="col-10">
+    <Container>
+      <Row className="justify-content-center">
+        <Col xs={12} md={10} lg={10}>
           <NavBar />
           <div className={`page-container ${shake ? "shake" : ""}`}>
             <img
@@ -99,9 +100,9 @@ const CheckEmailCode: React.FC = () => {
               <div className="error-message">{errorMessage}</div>
             )}
           </div>
-        </div>
-      </div>
-    </div>
+          </Col>
+      </Row>
+    </Container>
   );
 };
 
