@@ -4,7 +4,10 @@ import React from "react";
 import { useRouter } from 'next/navigation';  // Import useRouter
 import { Container } from "react-bootstrap";
 import { useState, ChangeEvent, FormEvent } from 'react';
+import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
+import Row from 'react-bootstrap/Row';
+import Button from 'react-bootstrap/Button';
 
 
 interface FormData {
@@ -13,6 +16,9 @@ interface FormData {
   email: string;
   event: string;
   questions: string;
+  attendance: string;
+  altdate: string;
+  newdate: string;
 }
 
 export default function RegisterForm() {
@@ -21,9 +27,14 @@ export default function RegisterForm() {
     schoolname: '',
     email: '',
     event: '',
-    questions: ''
+    questions: '',
+    attendance: '',
+    altdate: '',
+    newdate: ''
   });
   const router = useRouter();  // Initialize useRouter
+  const isAgreeYes = formData.attendance === 'yes';
+  const isAlternativeDateYes = formData.altdate === 'yes';
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -56,29 +67,105 @@ export default function RegisterForm() {
   return (
     <Container>
       <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-          <Form.Label>Name</Form.Label>
-          <Form.Control as="input" name="name" value={formData.name} onChange={handleChange} required />
+        <Form.Group as={Row} className="mb-3" controlId="exampleForm.ControlInput1">
+          <Form.Label column sm="4">Name:</Form.Label>
+          <Col sm="8">
+            <Form.Control as="input" name="name" value={formData.name} onChange={handleChange} required />
+            <Form.Control.Feedback type="invalid">
+            Please provide a valid name.
+          </Form.Control.Feedback>
+          </Col>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
-          <Form.Label>School Name</Form.Label>
-          <Form.Control as="input" name="schoolname" value={formData.schoolname} onChange={handleChange} required />
+        <Form.Group as={Row} className="mb-3" controlId="exampleForm.ControlInput2">
+          <Form.Label column sm="4">School Name:</Form.Label>
+          <Col sm="8">
+            <Form.Control as="input" name="schoolname" value={formData.schoolname} onChange={handleChange} required />
+            <Form.Control.Feedback type="invalid">
+            Please provide a school name.
+          </Form.Control.Feedback>
+          </Col>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="exampleForm.ControlInput3">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" name="email" placeholder="email@school.co.uk" value={formData.email} 
-                        onChange={handleChange} required 
-          />
+        <Form.Group as={Row} className="mb-3" controlId="exampleForm.ControlInput3">
+          <Form.Label column sm="4">Email Address:</Form.Label>
+          <Col sm="8">
+            <Form.Control type="email" name="email" placeholder="email@school.co.uk" value={formData.email} 
+                          onChange={handleChange} required 
+            />
+          </Col>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-          <Form.Label>I've some questions about joining the program</Form.Label>
-          <Form.Control as="textarea" placeholder="Type your questions here" rows={5} name="questions" 
-                        value={formData.questions} onChange={handleChange} required 
-          />
+        <Form.Group as={Row} className="mb-3" controlId="exampleForm.ControlTextarea1">
+          <Form.Label column sm="4">I've some questions about joining the program:</Form.Label>
+          <Col sm="8">
+            <Form.Control as="textarea" placeholder="Type your questions here" rows={3} name="questions" 
+                          value={formData.questions} onChange={handleChange} required 
+            />
+          </Col>
         </Form.Group>
-   
-      
-        <button type="submit" className="button">Submit Registration</button>
+      <fieldset>
+        <Form.Group as={Row} className="mb-3">
+          <Form.Label as="legend" column sm={4}>
+            My school can join the pilot kick-off on Wednesday 2 October, 2024
+          </Form.Label>
+          <Col sm={4}>
+            <Form.Check
+              type="radio"
+              label="Yes"
+              name="attendance"
+              id="formHorizontalRadios1"
+              value={formData.attendance} onChange={handleChange}
+            />
+          </Col>
+          <Col sm={4}>
+            <Form.Check
+              type="radio"
+              label="No"
+              name="attendance"
+              id="formHorizontalRadios2"
+              value={formData.attendance} onChange={handleChange}
+            />
+          </Col>
+        </Form.Group>
+      </fieldset>
+
+      {formData.attendance === 'no' && (
+        <fieldset>
+          <Form.Group as={Row} className="mb-3">
+            <Form.Label as="legend" column sm={4}>
+              I'd like to consider another suitable date:
+            </Form.Label>
+            <Col sm={4}>
+              <Form.Check
+                type="radio"
+                label="Yes"
+                name="altdate"
+                id="formHorizontalRadios1"
+                value={formData.altdate} onChange={handleChange}
+              />
+            </Col>
+            <Col sm={4}>
+              <Form.Check
+                type="radio"
+                label="No"
+                name="altdate"
+                id="formHorizontalRadios2"
+                value={formData.altdate} onChange={handleChange}
+              />
+            </Col>
+          </Form.Group>
+        </fieldset>
+      )}
+
+      {isAlternativeDateYes && (
+        <Form.Group as={Row} className="mb-3" controlId="exampleForm.ControlInput4">
+          <Form.Label column sm={4}>Select Date:</Form.Label>
+          <Col sm={8}>
+            <Form.Control type="date" name="newdate" value={formData.newdate} onChange={handleChange} />
+          </Col>
+        </Form.Group>
+      )}
+
+        <Button type="submit" variant="primary">Submit Registration</Button>
+        {/* disabled={!isAgreeYes && formData.altdate !== 'yes'} */}
       </Form>
     </Container>
   );
