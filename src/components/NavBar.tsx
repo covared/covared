@@ -27,7 +27,7 @@ const NavBar: React.FC = () => {
   
 
   return (
-    <Navbar bg="dark" data-bs-theme="dark" expand="lg" className="bg-body-tertiary justify-content-between">
+    <Navbar collapseOnSelect bg="light" data-bs-theme="light" expand="lg" className="bg-body-tertiary justify-content-between">
       <Container>
         <Navbar.Brand href="/">
             Springverse
