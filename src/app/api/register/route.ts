@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
 export async function POST(req: NextRequest) {
-  const { name, email, event } = await req.json();
+  const { name, email, schoolname, newdate, attendance, altdate, questions } = await req.json();
 
   // Setup the email transporter
   const transporter = nodemailer.createTransport({
@@ -19,7 +19,10 @@ export async function POST(req: NextRequest) {
     from: process.env.INFO_EMAIL,
     to: process.env.CEO_EMAIL,
     subject: 'Event Registration',
-    html: `<html><body><p>Name: ${name}</p><p>Email: ${email}</p><p>Event: ${event}</p></body></html>`
+    html: `<html><body><p>Name: ${name}</p><p>Email: ${email}</p><p>School Name: ${schoolname}</p><p>
+           Questions: ${questions}</p><p>Attending: ${attendance}</p><p>Alternative: ${altdate}</p>
+           <p>New Date: ${newdate}</p>
+           </body></html>`
   };
 
   try {
