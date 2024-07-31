@@ -5,7 +5,9 @@ import { EmbeddedCheckoutProvider, EmbeddedCheckout } from '@stripe/react-stripe
 import { useAuth } from "@/context/AuthContext";
 import NavBar from "@/components/NavBar";
 import { AIWriterAPI } from "../api/AIWriterAPI";
-import { Container, Row, Col } from 'react-bootstrap';
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
 
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid

@@ -2,7 +2,10 @@
 import { useAuth } from "@/context/AuthContext";
 import { AIWriterAPI } from "@/app/api/AIWriterAPI";
 import { usePathname } from "next/navigation";
-import { Container, NavDropdown, Nav, Navbar, Col, Row } from "react-bootstrap";
+import  Container from "react-bootstrap/Container";
+import  NavDropdown from "react-bootstrap/NavDropdown";
+import  Nav from "react-bootstrap/Nav";
+import  Navbar from "react-bootstrap/Navbar";
 
 const images = {
   logo: { name: "logo", image: "/thumbnail2-nobg.png" },

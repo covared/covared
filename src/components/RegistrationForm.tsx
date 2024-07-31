@@ -2,9 +2,14 @@
 "use client";
 import React from "react";
 import { useRouter } from 'next/navigation';  // Import useRouter
-import { Container } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
 import { useState, ChangeEvent, FormEvent, useEffect } from 'react';
-import { Row, Col, Form, Button, Alert } from 'react-bootstrap';
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import Alert from "react-bootstrap/Alert";
+
 
 
 interface FormData {

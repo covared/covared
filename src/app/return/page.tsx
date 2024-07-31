@@ -1,9 +1,12 @@
 "use client";
 import { useRouter } from "next/navigation";
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col } from 'react-bootstrap';
 import NavBar from "@/components/NavBar";
 import { AIWriterAPI } from "../api/AIWriterAPI";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+
 
 const Return: React.FC = () => {
   const [status, setStatus] = useState(null);

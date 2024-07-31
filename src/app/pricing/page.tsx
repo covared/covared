@@ -1,9 +1,14 @@
 "use client";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Modal, Button, Container, Row, Col } from 'react-bootstrap';
 import NavBar from "@/components/NavBar";
 import { useAuth } from "@/context/AuthContext";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+
 
 
 const Pricing: React.FC = () => {

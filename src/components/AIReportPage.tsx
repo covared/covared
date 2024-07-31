@@ -1,8 +1,10 @@
 "use client";
 import React from "react";
-import { Container, Row, Col } from 'react-bootstrap';
 import NavBar from "./NavBar";
 import { useRouter } from "next/navigation";
+import Container from "react-bootstrap/Container";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 
 const images = {
   hero: { name: "hero", image: "thumbnail2-nobg.png" },

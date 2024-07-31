@@ -1,5 +1,8 @@
 import NavBar from "@/components/NavBar";
-import { Container, Row, Col } from 'react-bootstrap';
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+
 
 export default function Page() {
     return (

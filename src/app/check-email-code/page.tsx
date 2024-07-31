@@ -5,7 +5,9 @@ import React, { useState, useEffect } from "react";
 import NavBar from "@/components/NavBar";
 import { useAuth } from "@/context/AuthContext";
 import { AIWriterAPI } from "../api/AIWriterAPI";
-import { Container, Row, Col } from 'react-bootstrap';
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
 
 const images = {
   logo: {
