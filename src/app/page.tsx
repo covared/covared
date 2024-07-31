@@ -22,7 +22,7 @@ export default function index() {
           <NavBar />
             <div>
               <br />
-            <h1>Welcome to Springverse</h1>
+            <h1>Welcome to Springsverse</h1>
             <br></br>
             <div className="text-block"></div>
               <h2>
