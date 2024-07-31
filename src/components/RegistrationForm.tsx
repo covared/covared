@@ -3,7 +3,7 @@
 import React from "react";
 import { useRouter } from 'next/navigation';  // Import useRouter
 import { Container } from "react-bootstrap";
-import { useState, ChangeEvent, FormEvent } from 'react';
+import { useState, ChangeEvent, FormEvent, useEffect } from 'react';
 import { Row, Col, Form, Button, Alert } from 'react-bootstrap';
 
 
@@ -29,8 +29,10 @@ export default function RegisterForm() {
   });
   const router = useRouter();  // Initialize useRouter
   const isAlternativeDateYes = formData.altdate === 'yes';
+
+  // set alert variables
   const [showAlert, setShowAlert] = useState(false);
-  const [alertMessage, setAlertMessage] = useState('');
+  const [alertMessage, setAlertMessage] = useState<React.ReactNode | string>('');
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -77,6 +79,15 @@ export default function RegisterForm() {
     
     router.push('/');  // Redirect to home page on success
   };
+
+  // Auto-dismiss and redirect after 5 seconds if not manually dismissed
+  useEffect(() => {
+    if (showAlert) {
+      const timer = setTimeout(handleCloseAlert, 5000); // 5 seconds
+
+      return () => clearTimeout(timer); // Cleanup the timer if the component unmounts or showAlert changes
+    }
+  }, [showAlert]);
 
   // Determine if the submit button should be enabled
   const isSubmitEnabled = () => {
