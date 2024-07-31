@@ -52,6 +52,10 @@ export default function index() {
                 innovative tools and ready-to-go resources to build your future scientists and mathematicians.
               </p>
           </div>
+          <br></br>
+            <div className="button-block">
+              <Button as='a' href="/register" variant="primary">Register your interest for the Springsverse pilot kick-off</Button>
+            </div>
         </Col>
       </Row>
     </Container>
