@@ -1,7 +1,7 @@
 "use client";
 import { useAuth } from "@/context/AuthContext";
 import { AIWriterAPI } from "@/app/api/AIWriterAPI";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 import  Container from "react-bootstrap/Container";
 import  NavDropdown from "react-bootstrap/NavDropdown";
 import  Nav from "react-bootstrap/Nav";
@@ -13,8 +13,7 @@ const images = {
 
 const NavBar: React.FC = () => {
   const { isLoggedIn, setIsLoggedIn, setEmail } = useAuth();
-  const router = useRouter();
-  const { pathname } = router; // Get the current route
+  const pathname = usePathname(); // Get the current route
   const logout = async () => {
     try {
       await AIWriterAPI.postAuthLogout();
@@ -42,25 +41,24 @@ const NavBar: React.FC = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto" variant="pills" defaultActiveKey="/" 
                activeKey={pathname} // Dynamically set the active key based on the current route
-               onSelect={(selectedKey) => router.push(selectedKey as string)}   // Navigate to the selected route
           > 
           <Nav.Item>
-            <Nav.Link eventKey="/">Home</Nav.Link>
+            <Nav.Link href="/" active={pathname === '/'}>Home</Nav.Link>
           </Nav.Item>
           <Nav.Item>
             <NavDropdown className="basic-nav-dropdown" title="Products">
-              <NavDropdown.Item eventKey="/sparkscity">Sparks City</NavDropdown.Item>
-              <NavDropdown.Item eventKey="/aireportal">AI Reportal</NavDropdown.Item>
+              <NavDropdown.Item active={pathname === '/sparkcity'} href="/sparkscity">Sparks City</NavDropdown.Item>
+              <NavDropdown.Item active={pathname === '/aireportal'} href="/aireportal">AI Reportal</NavDropdown.Item>
             </NavDropdown>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link eventKey="/pricing"> Pricing </Nav.Link>
+            <Nav.Link active={pathname === '/pricing'} href="/pricing"> Pricing </Nav.Link>
           </Nav.Item>
           <Nav.Item>
             {isLoggedIn ? (
-              <Nav.Link eventKey="/" onClick={logout}>Logout</Nav.Link>
+              <Nav.Link active={pathname === '/'} href="/" onClick={logout}>Logout</Nav.Link>
             ) : (
-              <Nav.Link eventKey="/login">Login / Register</Nav.Link>
+              <Nav.Link active={pathname === '/login'} href="/login">Login / Register</Nav.Link>
             )}
           </Nav.Item>
           </Nav> 
