@@ -30,7 +30,7 @@ const NavBar: React.FC = () => {
     <Navbar collapseOnSelect bg="light" data-bs-theme="light" expand="lg" className="bg-body-tertiary justify-content-between">
       <Container>
         <Navbar.Brand href="/">
-            Springverse
+            Springsverse
             <img
               src={images.logo.image}
               alt={images.logo.name}
