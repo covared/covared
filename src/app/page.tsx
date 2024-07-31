@@ -27,7 +27,7 @@ export default function index() {
             </div>
             <br></br>
             <div className="button-block">
-              <Button as='a' href="/register" variant="primary">Register</Button>
+              <Button as='a' href="/register" variant="primary">Register your interest for the Springsverse pilot kick-off</Button>
             </div>
             <br></br>
             <div className="buttom-text">

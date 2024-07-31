@@ -13,7 +13,7 @@ export default function Register() {
         <Col xs={12} md={10} lg={10}>
           <NavBar />
             <div className="page-container">
-                <h1>Register for the Event</h1>
+                <h1>Register your Interest</h1>
                 <RegisterForm />
             </div>
         </Col>

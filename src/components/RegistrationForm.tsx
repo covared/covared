@@ -179,7 +179,7 @@ export default function RegisterForm() {
         </Form.Group>
       )}
         <Button type="submit" variant="primary" disabled={!isSubmitEnabled()}>
-          Submit Registration
+          Submit Interest
         </Button>
       </Form>
     </Container>
