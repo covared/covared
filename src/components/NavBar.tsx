@@ -39,31 +39,22 @@ const NavBar: React.FC = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto" variant="pills" defaultActiveKey="/">
           <Nav.Item>
-            <Nav.Link className="nav-link" href="/">
-              Home
-            </Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
           </Nav.Item>
           <Nav.Item>
             <NavDropdown className="basic-nav-dropdown" title="Products">
-              <NavDropdown.Item eventKey="link-2.1" className="nav-link" href="/sparkscity">Sparks City</NavDropdown.Item>
-              <NavDropdown.Item eventKey="link-2.2" className="nav-link" href="/aireportal">AI Reportal</NavDropdown.Item>
+              <NavDropdown.Item eventKey="link-2.1" href="/sparkscity">Sparks City</NavDropdown.Item>
+              <NavDropdown.Item eventKey="link-2.2" href="/aireportal">AI Reportal</NavDropdown.Item>
             </NavDropdown>
           </Nav.Item>
           <Nav.Item>
-            {/* Conditionally render Pricing link as disabled */}
-            <Nav.Link eventKey="link-3" className="nav-link" href="/pricing">
-              Pricing
-            </Nav.Link>
+            <Nav.Link eventKey="link-3" href="/pricing"> Pricing </Nav.Link>
           </Nav.Item>
           <Nav.Item>
             {isLoggedIn ? (
-              <Nav.Link eventKey="link-4" href="/" onClick={logout} className="nav-link">
-                Logout
-              </Nav.Link>
+              <Nav.Link eventKey="link-4" href="/" onClick={logout}>Logout</Nav.Link>
             ) : (
-              <Nav.Link eventKey="link-5" href="/login" className="nav-link">
-                Login / Register
-              </Nav.Link>
+              <Nav.Link eventKey="link-5" href="/login">Login / Register</Nav.Link>
             )}
           </Nav.Item>
           </Nav> 
