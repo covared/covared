@@ -1,9 +1,12 @@
 "use client";
 import { useRouter } from "next/navigation";
 import React, { useState, useEffect } from "react";
-
 import NavBar from "@/components/NavBar";
 import { AIWriterAPI } from "../api/AIWriterAPI";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+
 
 const Return: React.FC = () => {
   const [status, setStatus] = useState(null);
@@ -40,9 +43,9 @@ const Return: React.FC = () => {
 
   if (status === "complete") {
     return (
-      <div className="container ">
-        <div className="row justify-content-center">
-          <div className="col-10">
+      <Container>
+        <Row className="justify-content-center">
+          <Col xs={12} md={10} lg={10}>
             <NavBar />
             <div className="return-page">
               <h1>Order Complete</h1>
@@ -52,7 +55,7 @@ const Return: React.FC = () => {
               </p>
               <p>
                 If you have any questions, please email{" "}
-                <a href="mailto:info@springsverse.co.uk">info@springsverse.co.uk</a>.
+                <a href={process.env.INFO_EMAIL}>info@springsverse.co.uk</a>.
               </p>
               <button
                 className="btn btn-custom-standard mt-1"
@@ -61,9 +64,9 @@ const Return: React.FC = () => {
                 Get Started
               </button>
             </div>
-          </div>
-        </div>
-      </div>
+          </Col>
+        </Row>
+      </Container>
     );
   }
 

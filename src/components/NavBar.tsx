@@ -1,10 +1,11 @@
 "use client";
-import Link from "next/link";
-
 import { useAuth } from "@/context/AuthContext";
 import { AIWriterAPI } from "@/app/api/AIWriterAPI";
 import { usePathname } from "next/navigation";
-import { NavDropdown } from "react-bootstrap";
+import  Container from "react-bootstrap/Container";
+import  NavDropdown from "react-bootstrap/NavDropdown";
+import  Nav from "react-bootstrap/Nav";
+import  Navbar from "react-bootstrap/Navbar";
 
 const images = {
   logo: { name: "logo", image: "/thumbnail2-nobg.png" },
@@ -12,7 +13,7 @@ const images = {
 
 const NavBar: React.FC = () => {
   const currentRoute=usePathname()
-  const { isLoggedIn, email, setIsLoggedIn, setEmail } = useAuth();
+  const { isLoggedIn, setIsLoggedIn, setEmail } = useAuth();
 
   const logout = async () => {
     try {
@@ -23,60 +24,47 @@ const NavBar: React.FC = () => {
       console.error("Failed to log out:", error);
     }
   };
-  const getLinkClass=(arg: string)=>{
-    if (currentRoute==arg) return "nav-item active"
-    return "nav-item"
-  }
+  
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <div className="navbar-brand">
-        <Link href="/">
-          Springverse
-          <img
-            src={images.logo.image}
-            alt={images.logo.name}
-            style={{ maxWidth: "2rem", height: "auto", marginLeft: "10px", marginRight: "10px"}}
-          />
-        </Link> 
-      </div>
-      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span className="navbar-toggler-icon"></span>
-      </button>
-      <div className="collapse navbar-collapse" id="navbarNav">
-      <ul className="nav nav-pills">
-        <li className={getLinkClass("/")}>
-          <Link className="nav-link" href="/">
-            Home
-          </Link>
-        </li>
-        <li className="nav-item">
-          <NavDropdown className="basic-nav-dropdown" title="Products">
-            <NavDropdown.Item className="nav-link" href="/sparkscity">Sparks City</NavDropdown.Item>
-            <NavDropdown.Item className="nav-link" href="/aireportal">AI Reportal</NavDropdown.Item>
-          </NavDropdown>
-        </li>
-        {/* Conditionally render Pricing link as disabled */}
-        <li className={getLinkClass("/pricing")}>
-          <Link className="nav-link disabled-link" href="/pricing">
-            Pricing
-          </Link>
-        </li>
-        <li className="nav-item">
-        {isLoggedIn ? (
-          <Link href="/" onClick={logout} className="nav-link">
-            Logout
-          </Link>
-        ) : (
-          <Link href="/login" className="nav-link">
-            Login / Register
-          </Link>
-        )}
-        </li>
-        
-      </ul>
-  </div>     
-</nav>
+    
+    <Navbar collapseOnSelect bg="light" data-bs-theme="light" expand="lg" className="bg-body-tertiary justify-content-between">
+      <Container>
+        <Navbar.Brand href="/">
+            Springverse
+            <img
+              src={images.logo.image}
+              alt={images.logo.name}
+              style={{ maxWidth: "2rem", height: "auto", marginLeft: "10px", marginRight: "10px"}}
+            />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto" variant="pills" defaultActiveKey="/">
+          <Nav.Item>
+            <Nav.Link href="/">Home</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <NavDropdown className="basic-nav-dropdown" title="Products">
+              <NavDropdown.Item eventKey="link-2.1" href="/sparkscity">Sparks City</NavDropdown.Item>
+              <NavDropdown.Item eventKey="link-2.2" href="/aireportal">AI Reportal</NavDropdown.Item>
+            </NavDropdown>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link eventKey="link-3" href="/pricing"> Pricing </Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            {isLoggedIn ? (
+              <Nav.Link eventKey="link-4" href="/" onClick={logout}>Logout</Nav.Link>
+            ) : (
+              <Nav.Link eventKey="link-5" href="/login">Login / Register</Nav.Link>
+            )}
+          </Nav.Item>
+          </Nav> 
+        </Navbar.Collapse>
+      </Container>    
+    </Navbar>
+       
   );
 };
 

@@ -1,4 +1,7 @@
 "use client";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
 import { useRouter } from "next/navigation";
 import React, { useState, useEffect } from "react";
@@ -49,9 +52,9 @@ const LoginPage: React.FC = () => {
   };
 
   return (
-    <div className="container">
-      <div className="row justify-content-center">
-        <div className="col-10">
+    <Container>
+      <Row className="justify-content-center">
+        <Col xs={12} md={10} lg={10}>
           <NavBar />
           {error && <Alert variant="danger">{error}</Alert>}
           <div className="page-container">
@@ -94,9 +97,9 @@ const LoginPage: React.FC = () => {
               */}
             </div>
           </div>
-        </div>
-      </div>
-    </div>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

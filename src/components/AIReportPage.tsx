@@ -1,8 +1,10 @@
 "use client";
 import React from "react";
-
 import NavBar from "./NavBar";
 import { useRouter } from "next/navigation";
+import Container from "react-bootstrap/Container";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 
 const images = {
   hero: { name: "hero", image: "thumbnail2-nobg.png" },
@@ -27,9 +29,9 @@ const AIReportPage: React.FC = () => {
   };
 
   return (
-    <div className="container">
-      <div className="row justify-content-center">
-        <div className="col-10">
+    <Container>
+      <Row className="justify-content-center">
+        <Col xs={12} md={10} lg={10}>
           <NavBar />
           <div className="page-container">
             <header className="hero-section text-center">
@@ -72,9 +74,9 @@ const AIReportPage: React.FC = () => {
               ))}
             </section>
           </div>
-        </div>
-      </div>
-    </div>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

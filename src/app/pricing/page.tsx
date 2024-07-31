@@ -1,10 +1,14 @@
 "use client";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Modal, Button } from "react-bootstrap";
-
 import NavBar from "@/components/NavBar";
 import { useAuth } from "@/context/AuthContext";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+
 
 
 const Pricing: React.FC = () => {
@@ -79,9 +83,9 @@ const Pricing: React.FC = () => {
   const handleCloseMultipleSubs = () => setShowMultipleSubs(false);
 
   return (
-    <div className="container pricing-page">
-      <div className="row justify-content-center">
-        <div className="col-10">
+    <Container>
+      <Row className="justify-content-center">
+        <Col xs={12} md={10} lg={10}>
           <NavBar />
           <h1>Pricing</h1>
           <div className="row">
@@ -139,9 +143,9 @@ const Pricing: React.FC = () => {
               </Button>
             </Modal.Footer>
           </Modal>
-        </div>
-      </div>
-    </div>
+          </Col>
+      </Row>
+    </Container>
   );
 };
 
