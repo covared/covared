@@ -4,7 +4,7 @@ import React from "react";
 import { useRouter } from 'next/navigation';  // Import useRouter
 import { Container } from "react-bootstrap";
 import { useState, ChangeEvent, FormEvent } from 'react';
-import { Row, Col, Form, Button } from 'react-bootstrap';
+import { Row, Col, Form, Button, Alert } from 'react-bootstrap';
 
 
 interface FormData {
@@ -28,8 +28,9 @@ export default function RegisterForm() {
     newdate: ''
   });
   const router = useRouter();  // Initialize useRouter
-  const isAgreeYes = formData.attendance === 'yes';
   const isAlternativeDateYes = formData.altdate === 'yes';
+  const [showAlert, setShowAlert] = useState(false);
+  const [alertMessage, setAlertMessage] = useState('');
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -61,11 +62,19 @@ export default function RegisterForm() {
     });
 
     if (response.ok) {
-      alert('You have been successfully registered for this event!');
+      setAlertMessage('You have been successfully registered for this event!');
     } else {
-      alert(response)
-      alert('Registration failed. Please, contact the admin');
+      const errorData = await response.json();
+      const errorMessage = `Error: ${errorData.message}`;
+      const additionalMessage = 'Registration failed. Please, contact the admin';
+      setAlertMessage(`${errorMessage}\n${additionalMessage}`);
     }
+    setShowAlert(true);
+  };
+    
+  const handleCloseAlert = () => {
+    setShowAlert(false);
+    
     router.push('/');  // Redirect to home page on success
   };
 
@@ -81,6 +90,15 @@ export default function RegisterForm() {
 
   return (
     <Container>
+      {showAlert && (
+        <Alert
+          variant="success"
+          onClose={handleCloseAlert}
+          dismissible
+        >
+          {alertMessage}
+        </Alert>
+      )}
       <Form onSubmit={handleSubmit}>
         <Form.Group as={Row} className="mb-3" controlId="exampleForm.ControlInput1">
           <Form.Label column sm="4">Name:</Form.Label>
