@@ -57,7 +57,7 @@ const LoginPage: React.FC = () => {
           {/* <div className="page-container"> */}
           <Container>
             <Row className="justify-content-center">
-              <Col xs={12} md={8} lg={6}>
+              <Col xs={12} md={10} lg={8}>
                 <h1>Welcome to Springsverse</h1>
                 <br></br>
                 <p>You need to log in to access the teacher tools or subscribe.</p>
