@@ -55,6 +55,7 @@ const LoginPage: React.FC = () => {
           {error && <Alert variant="danger">{error}</Alert>}
           <br></br>
           <div className="page-container">
+            <h1>Welcome to Springsverse</h1>
             <p>You need to log in to access the teacher tools or subscribe.</p>
             <p>There is no need to create a password.</p>
             <p>Enter your email, then enter the one-time passcode.</p>
