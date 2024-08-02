@@ -3,6 +3,8 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 import { useRouter } from "next/navigation";
 import React, { useState, useEffect } from "react";
 
@@ -55,24 +57,28 @@ const LoginPage: React.FC = () => {
             <p>You need to log in to access the teacher tools or subscribe.</p>
             <p>There is no need to create a password.</p>
             <p>Enter your email, then enter the one-time passcode.</p>
-            <h5>Email Address</h5>
             <div className="login-box">
-              <form onSubmit={SendEmailCodeNavigate}>
-                <input
+              <Form onSubmit={SendEmailCodeNavigate}>
+                <Form.Group className="mb-3" controlId="loginemail">
+                <Form.Label>Email address</Form.Label>
+                
+                <Form.Control
                   type="email"
                   name="email"
-                  placeholder="Email Address"
+                  placeholder="yourmail@yourschooldomain.co.uk"
                   value={email}
                   onChange={handleEmailChange}
                   autoComplete="email"
                 />
-                <button
-                  className="btn btn-custom-standard"
+                <Button
+                  variant="primary"
+                  type="submit"
                   disabled={isLoading}
                 >
                   Login / Register with email
-                </button>
-              </form>
+                </Button>
+                </Form.Group>
+              </Form>
               {/* put these in later
               <hr />
               <button className='btn btn-custom-green'>Log in with Google</button>
