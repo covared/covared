@@ -54,7 +54,7 @@ const LoginPage: React.FC = () => {
           <NavBar />
           {error && <Alert variant="danger">{error}</Alert>}
           <br></br>
-          <div className="page-container">
+          {/* <div className="page-container"> */}
             <h1>Welcome to Springsverse</h1>
             <br></br>
             <p>You need to log in to access the teacher tools or subscribe.</p>
@@ -68,11 +68,12 @@ const LoginPage: React.FC = () => {
                 <Form.Control
                   type="email"
                   name="email"
-                  placeholder="Email Address"
+                  placeholder="Enter Email"
                   value={email}
                   onChange={handleEmailChange}
                   autoComplete="email"
                 />
+                </Form.Group>
                 <Button
                   variant="primary"
                   type="submit"
@@ -80,7 +81,6 @@ const LoginPage: React.FC = () => {
                 >
                   Login / Register with email
                 </Button>
-                </Form.Group>
               </Form>
               {/* put these in later
               <hr />
@@ -88,7 +88,7 @@ const LoginPage: React.FC = () => {
               <button className='btn btn-custom-red'>Log in with Microsoft</button>
               */}
             </div>
-          </div>
+          {/* </div> */}
         </Col>
       </Row>
     </Container>
