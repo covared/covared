@@ -58,17 +58,6 @@ const LoginPage: React.FC = () => {
           <NavBar />
           {error && <Alert variant="danger">{error}</Alert>}
           <div className="page-container">
-            <img
-              src={images.logo.image}
-              alt={images.logo.name}
-              style={{
-                maxWidth: "2rem",
-                height: "auto",
-                marginLeft: "10px",
-                marginRight: "10px",
-              }}
-            />
-            <h1>Springverse</h1>
             <p>You need to log in to access the teacher tools or subscribe.</p>
             <p>There is no need to create a password.</p>
             <p>Enter your email, then enter the one-time passcode.</p>
