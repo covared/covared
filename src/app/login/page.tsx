@@ -55,40 +55,45 @@ const LoginPage: React.FC = () => {
           {error && <Alert variant="danger">{error}</Alert>}
           <br></br>
           {/* <div className="page-container"> */}
-            <h1>Welcome to Springsverse</h1>
-            <br></br>
-            <p>You need to log in to access the teacher tools or subscribe.</p>
-            <p>There is no need to create a password.</p>
-            <p>Enter your email, then enter the one-time passcode.</p>
-            <div>
-              <Form onSubmit={SendEmailCodeNavigate}>
-                <Form.Group className="mb-3" controlId="loginemail">
-                <Form.Label>Email address</Form.Label>
-                
-                <Form.Control
-                  type="email"
-                  name="email"
-                  placeholder="Enter Email"
-                  value={email}
-                  onChange={handleEmailChange}
-                  autoComplete="email"
-                />
-                </Form.Group>
-                <Button
-                  variant="primary"
-                  type="submit"
-                  disabled={isLoading}
-                >
-                  Login / Register with email
-                </Button>
-              </Form>
-              {/* put these in later
-              <hr />
-              <button className='btn btn-custom-green'>Log in with Google</button>
-              <button className='btn btn-custom-red'>Log in with Microsoft</button>
-              */}
-            </div>
-          {/* </div> */}
+          <Container>
+            <Row className="justify-content-center">
+              <Col xs={12} md={8} lg={6}>
+                <h1>Welcome to Springsverse</h1>
+                <br></br>
+                <p>You need to log in to access the teacher tools or subscribe.</p>
+                <p>There is no need to create a password.</p>
+                <p>Enter your email, then enter the one-time passcode.</p>
+                <div>
+                  <Form onSubmit={SendEmailCodeNavigate}>
+                    <Form.Group className="mb-3" controlId="loginemail">
+                    <Form.Label>Email address</Form.Label>
+                    
+                    <Form.Control
+                      type="email"
+                      name="email"
+                      placeholder="Enter Email"
+                      value={email}
+                      onChange={handleEmailChange}
+                      autoComplete="email"
+                    />
+                    </Form.Group>
+                    <Button
+                      variant="primary"
+                      type="submit"
+                      disabled={isLoading}
+                    >
+                      Login / Register with email
+                    </Button>
+                  </Form>
+                  {/* put these in later
+                  <hr />
+                  <button className='btn btn-custom-green'>Log in with Google</button>
+                  <button className='btn btn-custom-red'>Log in with Microsoft</button>
+                  */}
+                </div>
+              </Col>
+            </Row>
+          </Container>
         </Col>
       </Row>
     </Container>
