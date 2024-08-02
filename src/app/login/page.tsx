@@ -10,12 +10,6 @@ import NavBar from "@/components/NavBar";
 import { useAuth } from "@/context/AuthContext";
 import { AIWriterAPI } from "../api/AIWriterAPI";
 
-const images = {
-  logo: {
-    name: "logo",
-    image: "/thumbnail2-nobg.png",
-  },
-};
 
 const LoginPage: React.FC = () => {
   const router = useRouter();
