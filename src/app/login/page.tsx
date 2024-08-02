@@ -53,6 +53,7 @@ const LoginPage: React.FC = () => {
         <Col xs={12} md={10} lg={10}>
           <NavBar />
           {error && <Alert variant="danger">{error}</Alert>}
+          <br></br>
           <div className="page-container">
             <p>You need to log in to access the teacher tools or subscribe.</p>
             <p>There is no need to create a password.</p>
@@ -65,7 +66,7 @@ const LoginPage: React.FC = () => {
                 <Form.Control
                   type="email"
                   name="email"
-                  placeholder="yourmail@yourschooldomain.co.uk"
+                  placeholder="Email Address"
                   value={email}
                   onChange={handleEmailChange}
                   autoComplete="email"
