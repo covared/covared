@@ -58,7 +58,7 @@ const LoginPage: React.FC = () => {
             <p>You need to log in to access the teacher tools or subscribe.</p>
             <p>There is no need to create a password.</p>
             <p>Enter your email, then enter the one-time passcode.</p>
-            <div className="login-box">
+            <div>
               <Form onSubmit={SendEmailCodeNavigate}>
                 <Form.Group className="mb-3" controlId="loginemail">
                 <Form.Label>Email address</Form.Label>
