@@ -3,8 +3,7 @@ import React from "react";
 import NavBar from "./NavBar";
 import { useRouter } from "next/navigation";
 import Container from "react-bootstrap/Container";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
+import { Col, Row, Button } from "react-bootstrap";
 
 const images = {
   hero: { name: "hero", image: "thumbnail2-nobg.png" },
@@ -33,24 +32,26 @@ const AIReportPage: React.FC = () => {
       <Row className="justify-content-center">
         <Col xs={12} md={10} lg={10}>
           <NavBar />
-          <div className="page-container">
-            <header className="hero-section text-center">
-              <div className="hero-content">
-                <div>
+          <Container className="hero-section">
+            <Row className="justify-content-center">
+              <Col className="text-center">
+                <header>
                   <h2>AI Reportal</h2>
+                </header>
                   <p>
                     Efficient teaching and learning tools, superpowered by AI.
                   </p>
-                  <button
+                  <Button
                     className="btn btn-custom-standard"
+                    type="submit"
+                    variant="primary"
                     onClick={loginRegisterNavigate}
                   >
                     Get Started for Free
-                  </button>
-                </div>
-              </div>
-            </header>
-
+                  </Button>
+              </Col>
+            </Row>
+          
             <section className="features-section">
               {features.map((feature, index) => (
                 <div
@@ -73,7 +74,7 @@ const AIReportPage: React.FC = () => {
                 </div>
               ))}
             </section>
-          </div>
+          </Container>
         </Col>
       </Row>
     </Container>
