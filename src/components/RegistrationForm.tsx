@@ -116,19 +116,19 @@ export default function RegisterForm() {
         </Alert>
       )}
       <Form onSubmit={handleSubmit}>
-        <Form.Group as={Row} className="mb-3" controlId="exampleForm.ControlInput1">
+        <Form.Group as={Row} className="mb-3" controlId="Form.ControlInput1">
           <Form.Label column sm="4">Name:</Form.Label>
           <Col sm="8">
             <Form.Control as="input" name="name" value={formData.name} onChange={handleChange} required />
           </Col>
         </Form.Group>
-        <Form.Group as={Row} className="mb-3" controlId="exampleForm.ControlInput2">
+        <Form.Group as={Row} className="mb-3" controlId="Form.ControlInput2">
           <Form.Label column sm="4">School Name:</Form.Label>
           <Col sm="8">
             <Form.Control as="input" name="schoolname" value={formData.schoolname} onChange={handleChange} required />
           </Col>
         </Form.Group>
-        <Form.Group as={Row} className="mb-3" controlId="exampleForm.ControlInput3">
+        <Form.Group as={Row} className="mb-3" controlId="Form.ControlInput3">
           <Form.Label column sm="4">Email Address:</Form.Label>
           <Col sm="8">
             <Form.Control type="email" name="email" placeholder="email@school.co.uk" value={formData.email} 
@@ -136,7 +136,7 @@ export default function RegisterForm() {
             />
           </Col>
         </Form.Group>
-        <Form.Group as={Row} className="mb-3" controlId="exampleForm.ControlTextarea1">
+        <Form.Group as={Row} className="mb-3" controlId="Form.ControlTextarea1">
           <Form.Label column sm="4">I've some questions about joining the program:</Form.Label>
           <Col sm="8">
             <Form.Control as="textarea" placeholder="Type your questions here" rows={3} name="questions" 
@@ -205,7 +205,7 @@ export default function RegisterForm() {
       )}
 
       {isAlternativeDateYes && (
-        <Form.Group as={Row} className="mb-3" controlId="exampleForm.ControlInput4">
+        <Form.Group as={Row} className="mb-3" controlId="Form.ControlInput4">
           <Form.Label column sm={4}>Select a Date:</Form.Label>
           <Col sm={8}>
             <Form.Control type="date" name="newdate" value={formData.newdate} onChange={handleChange} />
