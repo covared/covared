@@ -42,7 +42,6 @@ const AIReportPage: React.FC = () => {
                     Efficient teaching and learning tools, superpowered by AI.
                   </p>
                   <Button
-                    className="btn btn-custom-standard"
                     type="submit"
                     variant="primary"
                     onClick={loginRegisterNavigate}
